@@ -1,0 +1,3599 @@
+commit a111dc6c462c4f99c6f0c0c344d4ed66488df0ab
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed Feb 6 09:06:47 2013 -0500
+
+    innumerable changes, one small bug fix, and added annihilation functionality
+
+commit a77b9d08c88edd72b3372001704c044a22bec2b2
+Merge: 8f836f2 53da1de
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Fri Dec 14 13:38:49 2012 -0500
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 8f836f247f58ab5e17d5f4dc2b2588e2740ad207
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Fri Dec 14 13:38:02 2012 -0500
+
+    minor changes
+
+commit 53da1def6cb098debb5cdde9f590ac5ddf5ffcda
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Dec 13 21:21:23 2012 -0500
+
+    Added support for a bag model mixed equation of state,
+    which is combined with the lattice/hrg eos by a
+    linear combination in pressure versus energy density.
+    
+    New parameters with examples:
+    Relative file location:
+    string EQOFST_BAGDATA progdata/EosData/ScottHRG/bagModel.txt
+    Fraction of bag model pressure to be used:
+    double EQOFST_BAGMERGE_FRAC 0.5
+
+commit 571c9334eb0a1815b7b4cb79440d2b1b6afdecb3
+Author: Chris Coleman-Smith <cec24@phy.duke.edu>
+Date:   Fri Dec 7 13:30:53 2012 -0500
+
+    added a pretty obvious verbatim copy of the gp section from the galform paper
+
+commit 8439259a6439c527abd53d2ed4210c3520ffb665
+Merge: 585acff b9df49d
+Author: jackdawjackdaw <cec24@phy.duke.edu>
+Date:   Fri Dec 7 12:37:48 2012 -0500
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 585acff207a9a9997388fe952818f8970e81408c
+Author: jackdawjackdaw <cec24@phy.duke.edu>
+Date:   Fri Dec 7 12:37:41 2012 -0500
+
+    umm
+
+commit b9df49d638ab5fc3a4c58c2ab0e1dc1e3a891dd8
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Nov 26 17:37:03 2012 -0500
+
+    Paper edits.
+
+commit 94c803aefffa80939b8ad083903aa08874470860
+Merge: 03f0897 9e3a0e2
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Nov 26 15:09:17 2012 -0500
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 9e3a0e23a931e78f8737afd0fbfd912eee1148ad
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Nov 25 21:19:54 2012 -0500
+
+    finished editing for the weekend
+
+commit 2eadae46f32b6a6b18acd95aa5fb439038cfdea0
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Nov 25 21:12:21 2012 -0500
+
+    fixed up statetheory.tex and emulator.tex
+
+commit 6fc59a3ec0f9011a08a661cbb85c0bfe4f21bb4b
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Nov 25 20:44:21 2012 -0500
+
+    minor changes to rhicdata.tex
+
+commit cfcaa8512f5bfb7bbc4b08559bb0c9dadbe16208
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Nov 25 13:58:15 2012 -0500
+
+    finished fixes to rhicmodel.tex
+
+commit a16826a4b991a57d533f02e8549021ba25b535d5
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Nov 25 13:41:32 2012 -0500
+
+    more minor fixes
+
+commit decc6d2a991e8752af08d64263937c1cbcf14dad
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Nov 25 13:05:17 2012 -0500
+
+    small editing changes
+
+commit 5c2f10190a96b584ce59bac5337e404ed48c5569
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Nov 25 12:14:27 2012 -0500
+
+    just trying to make sure everything is up to date
+
+commit 03f08972bbf9e5d480eef4b58c38bb317ecbd48d
+Merge: 0b36246 2ca8824
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Nov 21 12:39:45 2012 -0500
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 4972502fa072466f910b9c83982892599f1fb425
+Merge: 544e7da 2ca8824
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Mon Nov 19 16:01:25 2012 -0500
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 544e7da03259ed83ad44950574798f22296db013
+Merge: 84b26b3 ab4176b
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Mon Nov 19 13:09:08 2012 -0500
+
+    Merge branches 'master' and 'CMakifyRHIC' of cvs.cs.unc.edu:MADAI/rhic into CMakifyRHIC
+
+commit 2ca8824506f6eae1d425c87ef98f94b1ada59159
+Merge: 84b26b3 ab4176b
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Mon Nov 19 11:22:44 2012 -0500
+
+    Merge branch 'CMakifyRHIC'
+
+commit 84b26b32fba82be39c760fc14f18037525734055
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Nov 18 08:46:15 2012 -0500
+
+    updated v2,spectra,hbt figures to use GP results rather than quad fit results
+
+commit 0b36246ecae8f0aca9253eed9a0372f25cf3b4b6
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Nov 16 15:09:40 2012 -0500
+
+    Not sure??
+
+commit 5b9442a9598a44d9888919a2ada7147558917d7f
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Nov 15 14:56:27 2012 -0500
+
+    fixed up summary.tex to get rid of quadratic-fit stuff
+
+commit e38d0a790631ddbd8ab894c61dc6cf7287db68ef
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Nov 15 14:45:49 2012 -0500
+
+    took junk latex files out of repo
+
+commit 6da1faea9c7fa3d0da5f7719ecd044805853762d
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Nov 15 14:44:54 2012 -0500
+
+    added descripton of metropolis algo in results.tex
+
+commit a0b2aff6516d22c47bb8f82c5070c76ac7f6d70d
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Nov 15 14:19:07 2012 -0500
+
+    Adding rhicstat paper
+
+commit f8de993137d2917c7a026f9dd6a27548f068a77a
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Nov 15 14:16:49 2012 -0500
+
+    still fixing conflicts
+
+commit ab4176b2f25a0da49f094bc8843174b0e605b306
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Mon Nov 12 13:40:15 2012 -0500
+
+    Added X11 required package
+
+commit 4b0e652a806aedc2f76c7925f7937b13c71a04ce
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Mon Nov 12 13:39:25 2012 -0500
+
+    Added configuration of rhic project
+
+commit 45ebf87d63f813410397db92e95fc15bf7eafb23
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Mon Nov 12 10:55:27 2012 -0500
+
+    Added package configuration file for rhic project
+
+commit 18cbf506ef34dc18352a051c7cd908bf7237a354
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Fri Nov 9 13:01:03 2012 -0500
+
+    Renamed directory name with trailing periods to avoid problems cloning on windows
+
+commit 958cd530cda603d2e4cf68645517d9961c50dcb2
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Fri Nov 9 12:31:32 2012 -0500
+
+    Fixed case errors
+
+commit eb56c699a7af975111106edb2d41ccab76c61c56
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Fri Nov 9 11:08:47 2012 -0500
+
+    Added top-level CMakeLists.txt file
+    
+    This enables building all the libraries and executables by configuring
+    just one CMake project. All libraries can still be built independently.
+
+commit df3a483a61fee8592456d568550af7241a4a3fc7
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Fri Nov 9 10:40:30 2012 -0500
+
+    Updated to reflect change in CMake files location
+
+commit d1151681d9e01ccb6a72b7d371a76db7b5ccca4b
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Fri Nov 9 10:39:22 2012 -0500
+
+    Moved CMake directory to top level
+
+commit ae21bc72181ede8a93b5b1424898e6da876c77d8
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Fri Nov 9 10:23:15 2012 -0500
+
+    Added CMakeLists.txt file.
+
+commit f09516e1d82f43e4b686c24d55e402a7ca50e13a
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Fri Nov 9 10:22:47 2012 -0500
+
+    Added dependencies to package variables
+
+commit 8c80d144411b3409dbee736d143126f79637ed0a
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Fri Nov 9 10:21:51 2012 -0500
+
+    Added GSL libraries and include directories for export
+
+commit 5c28f0aa498f9663363e9c36cc6fc831242e04a7
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Fri Nov 9 10:20:25 2012 -0500
+
+    Added required components of HDF5
+    
+    Also added dependent libraries to list of libraries.
+
+commit 979afdaafd0deab414d36e8aa3d3879942e1667b
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Fri Nov 9 09:19:52 2012 -0500
+
+    Renamed ishydro3 package config file
+
+commit 8952c3c53c369552b810846e2ed089883fc3d624
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 15:46:26 2012 -0500
+
+    Added bmaker executable
+
+commit 364f1d6acebf0aaab29c3b0b419d36fadb7860e4
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 15:37:41 2012 -0500
+
+    CMakified isHydro3 library
+
+commit 5281db27cce29fd549b4d268b80931ce2f65e003
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 15:37:28 2012 -0500
+
+    Added newline at end of file
+
+commit 4bafd288db78cfddd2ad769b8ceefa7ea0da81fa
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 15:37:19 2012 -0500
+
+    Added coral libraries to analyze_LIBRARIES variable
+
+commit 2c6741af29898217a359315a8a1e14117bb57aa0
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 15:25:31 2012 -0500
+
+    Made executable from parmaker.cc
+
+commit c608d5e1817cdd7d7d5124efb4ce729cdd0688f5
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 15:21:37 2012 -0500
+
+    CMakified b3d library
+
+commit 4a891f39853bdda9b995b9029d507f3208cda21b
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 15:20:54 2012 -0500
+
+    Removed HDF5 dependency from this project
+    
+    It's a dependency on a different dependency.
+
+commit b8ad1ea026e9ea0f430500d606229f37414957e5
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 15:20:33 2012 -0500
+
+    Fixed include directories
+
+commit 2d21ee5912f7e212f55dba7075beba098f6f1204
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 14:33:46 2012 -0500
+
+    CMakified the analyze library
+
+commit e64edffb85c1549e2e67a8a8acf9ef480cf0eff9
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 14:24:51 2012 -0500
+
+    Added package configuration
+
+commit c3f0ffa99aa9d9f15e55a2d3cfcc2a047c62e1db
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 13:06:22 2012 -0500
+
+    Added CMake build system files
+
+commit fc55f1dbd7f5c2497cffd725c194351d622a3177
+Author: Cory Quammen <cquammen@cs.unc.edu>
+Date:   Thu Nov 8 13:05:49 2012 -0500
+
+    Added .gitignore file
+
+commit 02e3403be5701237acbd209309b8a2d24285bee0
+Merge: c127436 4c973fc
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Oct 17 21:36:29 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit c12743695ec7242f21c4ed6a56eed1449d75a430
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Oct 17 21:35:35 2012 -0400
+
+    Equations of motion fix.
+
+commit 4c973fca24c7a9d36f3163139e3b157c005c4aff
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed Oct 17 18:02:55 2012 -0400
+
+    minor input/output changes
+
+commit 9c7beeff4626f4073c74216ede48e3207c28dfb9
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Mon Sep 24 10:54:51 2012 +0200
+
+    changed uncertainty calculation for v2 values
+
+commit b20d33f58d2bf2d25a17d9cd5e9cfe385a376216
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Tue Sep 18 09:19:20 2012 +0200
+
+    fixed output for v2 vs. pt
+
+commit 06dbb3704fc1bbfd2cbf1755279b6f13871aa85c
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Tue Sep 18 08:00:48 2012 +0200
+
+    re-fixed spectra and v2 output
+
+commit 0cd6a4fd71c01d3791d1ef61d6f0251f3b6af2da
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Mon Sep 17 15:24:19 2012 +0200
+
+    minor changes
+
+commit 8098022348289ddb7cb2904037c31b8a4d57ed80
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Aug 27 21:02:07 2012 -0400
+
+    Assert dependence removed.
+
+commit 508851cc48b73b670b9aaccc8bd760db03fed907
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Aug 27 20:53:24 2012 -0400
+
+    Removed xdmf and boost-threads dependence.
+
+commit 28ac169cd783fc44d731038d68184baafd511163
+Merge: b682fdd dd4b93d
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Sun Aug 19 15:53:38 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit dd4b93ddeff15f79f286bcfcf74bf810bb963224
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Aug 19 07:24:21 2012 -0400
+
+    added hydrotob3d.h
+
+commit b682fdd41541393676125975d71608e4a47019dc
+Merge: 7362d8e 26d94c2
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Sat Aug 18 16:57:25 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 26d94c2e1434417753aa56b5c8cb3d770ed9cbf3
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sat Aug 18 16:30:46 2012 -0400
+
+    still trying to commit
+
+commit 7362d8e7758529062b8529975e0c63dfb3fd1008
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Aug 17 16:06:22 2012 -0400
+
+    Little changes to get limFrag going.  Extra messages in output.
+
+commit da958f46fb09989fb83d03f661bb7c175faeb905
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jul 30 11:22:31 2012 -0400
+
+    Fixes to cell deactivation systems.
+
+commit 86037bcd86f9287c0aab38d823780ca6aca63155
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 24 11:46:10 2012 -0400
+
+    Jacobians finally right.
+
+commit 9321976985761dfe7b4f2540c1c21d4d10012ce2
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 24 10:39:34 2012 -0400
+
+    Faster Cornelius producing same surfaces.  Fix to Jacobian of differential surface vector.
+
+commit 7b5186bfb819fe9097dd6046965491555af4df2b
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 17 13:59:01 2012 -0400
+
+    Removing explicit xdmf dependency.  No guts changes.
+
+commit b0e82d750f420e8ed568e289c3613a54e539a667
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 17 13:18:08 2012 -0400
+
+    Fixes to xdmf output resulting in a single h5 and xmf file natively.
+
+commit ae2ef7f31c688a516ee4d5386d17396540a2f90e
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jul 16 16:50:25 2012 -0400
+
+    Changes to xdmf memory management.
+
+commit 19395e758d03f1a1956e743974c2ffbd61eeec2d
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 10 13:25:01 2012 -0400
+
+    Ships without extras.
+
+commit 3d7d2cd4e20a29fa7ac3f6018bf147219610c562
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 10 13:11:50 2012 -0400
+
+    Working version of threads.
+
+commit fa02fb59439b329128d597e661379b258eea6d45
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 10 12:22:18 2012 -0400
+
+    Significant fixes to multithreading. Contains boost dependence in makefile.
+
+commit d5484c0f060b85cfcb7d5bc948dd195a548292e2
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 3 15:03:50 2012 -0400
+
+    Removing dependecies from makefile.
+
+commit 955ab42cd777e53f41f6cbbbbf60bbb1f7f68367
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 3 15:01:03 2012 -0400
+
+    Added cornelius.
+
+commit f0b149c1967ec1acdb852f77db9e2fa859dc0d0c
+Merge: bd21c7a a707b50
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 3 14:58:23 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	isHydro3/src/CHydro.cpp
+
+commit bd21c7a7563d3303bdaa07dc04185e2d50c45bd2
+Merge: e622b82 5c43455
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 3 14:51:47 2012 -0400
+
+    Merge branch 'hannuFOS'
+    
+    Conflicts:
+    	isHydro3/src/octMesh.cpp
+
+commit 5c434559d8dd30df9a34a4e84d39a2682ad0ed2e
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 3 14:48:15 2012 -0400
+
+    Removed my comp geometry stuff.
+
+commit 1ef7ba3701db1def7ee5b5c24a6d157cf6075170
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 3 14:20:49 2012 -0400
+
+    Working version in both oct and full cases.
+
+commit add365c93c247f414691f69910273fb313e66cf9
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jul 3 09:37:29 2012 -0400
+
+    Bug in fullMesh.
+
+commit de386153b828e045a5c9ca39f27b7223d6be67d0
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jul 2 11:39:07 2012 -0400
+
+    Fixed dTau
+
+commit c02ea744d3cff87276cca56fec0d74e4c83b2c96
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Sun Jul 1 11:37:11 2012 +0200
+
+    First working version.
+
+commit a707b508d3c3435cff5f3ae55e3bcc83544b1f8c
+Merge: 3afae13 a02d429
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Fri Jun 29 13:54:18 2012 -0400
+
+    minor correction to counting charge in writehd5
+    Merge cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	isHydro3/src/CHydro.cpp
+
+commit 3afae13c9b6b8be102df41d7ed0a826d1d9e9ba1
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Jun 28 14:25:04 2012 -0400
+
+    a few fixes to osuhydrotob3d, nothing to get excited about
+
+commit 12f195c58e010cd5439e0be4ebbada3fdc1b4282
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Jun 27 13:30:16 2012 +0300
+
+    Current version.
+
+commit cdb39787a20050471db5275269a00d28f4138996
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Sun Jun 17 10:03:43 2012 -0400
+
+    Threaded version of CMesh::forward() works.  Needs to be verified for all symmetry cases.
+
+commit ce5846d46d8424cee09fcab083713d59a3da9d12
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 15 14:34:50 2012 -0400
+
+    progress.
+
+commit e622b82833e15fbadb49092acc01e31b93d93be3
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 15 10:01:50 2012 -0400
+
+    added bulk to pi plus support in cell.
+
+commit b9a585ef13e8663c4d0ca49b3a520e535f9704bd
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 15 09:27:26 2012 -0400
+
+    Steps to adding boost threads support.
+
+commit e50fe0091e07462a0e9455ef90ba63d630d81033
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Jun 14 18:04:24 2012 -0400
+
+    Working version that includes asymmetric case.
+    2d asym fully tested.
+    3d asym test only ran a few steps.
+
+commit c1443f797137ca08e27e60d8d1c950493cb8a59e
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Jun 13 21:27:25 2012 -0400
+
+    Now works the same as master branch.  Next step is fullMesh support.
+
+commit 0a5b5faecb446194743b6b994154608eeab7a209
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Jun 13 21:01:48 2012 -0400
+
+    not sure why this doesn't work.
+
+commit 6c9f8cb575745ab0f5fcb95ba1ebc98613ebab42
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Jun 13 16:52:52 2012 -0400
+
+    activeCell List almost works.
+
+commit a754234f0a767fe17b342ac9aadad1953ea27f9c
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jun 12 12:00:24 2012 -0400
+
+    Adding a list of active cells.
+
+commit a02d429bf273d624a2a8d1103df019b61e00a3a7
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 8 16:03:59 2012 -0400
+
+    merge error
+
+commit cf73a3452c0e8a6654d96e17ddcd8928bee7017b
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 8 13:35:42 2012 -0400
+
+    Added qualifier.h to repo.
+
+commit c04742c9b4d8dc80c23ebf0371016ce86ac4e49c
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 8 13:34:55 2012 -0400
+
+    Something minor I guess?
+
+commit d647ad69eb96a416efe5a08c0accb6cade318b61
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 8 11:33:11 2012 -0400
+
+    Missed some merge tags.
+
+commit 3645b09cc7a3f5128a16fbf8f9aebed45182dbca
+Merge: b7e71a0 e134bd5
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 8 11:31:33 2012 -0400
+
+    Merge branch '3dFOS'
+    
+    Conflicts:
+    	isHydro3/src/CHydro.cpp
+    	isHydro3/src/CMesh.h
+    	isHydro3/src/fullMesh.cpp
+    	isHydro3/src/octMesh.cpp
+
+commit e134bd504661e26c004ff65bbc74bcb5bbb998f6
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 8 11:24:15 2012 -0400
+
+    Tracking the FOS files.
+
+commit b48ddd58f9dc66be15130a3c52984059c4dc464c
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 8 11:21:34 2012 -0400
+
+    Finishing touches on 3d freezeout.
+
+commit b7e71a051637c81095481e0633cc95d85892295d
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Jun 7 20:46:19 2012 -0400
+
+    Minor.
+
+commit e5148f91a3f4450832414c1002d7eb94730975b1
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Jun 7 15:28:35 2012 -0400
+
+    Now runs in reasonable amount of time and doesn't crash if exiting early.
+
+commit 6b2a93d527fc6d332b748fc2dbc6319a524af18d
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Jun 7 14:04:08 2012 -0400
+
+    meh
+
+commit 42da097385f016d187422f0c94af157f36feb51b
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Jun 7 10:58:55 2012 -0400
+
+    need to migrate FOS changes.
+
+commit a688acd0bc2f092df37af080f8575fc48b175ae8
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Jun 7 10:55:19 2012 -0400
+
+    Added back active cell deadening.
+
+commit 8e4280c17b8bc73ad59ece0b187aec6ee5181d40
+Merge: de2180b 6107619
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Jun 6 10:17:04 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit de2180b160980b95db03d17408e2e32fed9ae3a1
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Jun 6 10:16:38 2012 -0400
+
+    Cleaned up freezeout.dat generation.  Added bulk support for freezeout output.
+
+commit 61076191eed5988322eafff510be08b2a818ca3e
+Merge: 2399f17 5476e04
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Tue Jun 5 21:27:20 2012 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 2399f17d562c7af9465babc6ca484ab66698cfcf
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Tue Jun 5 21:26:42 2012 -0400
+
+    no real changes on my end
+
+commit 5476e040c9d27ce5800fda423a1265fc36d24a63
+Merge: b06d76c b9e080b
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jun 5 19:52:54 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit b06d76c99cbdd7b3c87f9c083fcae3db7d677112
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jun 5 19:51:54 2012 -0400
+
+    Resolved underflow issue in octMesh::getFOS() routines.
+
+commit 4bef08858703787e133b7ab12bef6f73a4e33c73
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jun 5 17:07:24 2012 -0400
+
+    3d mostly working.
+
+commit b9e080bc94648f31541dbff0dc965a448f2fa357
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Mon Jun 4 15:58:10 2012 -0400
+
+    fixed a booboo I made last week in hydrotob3d
+
+commit 6d6c1b2b5df97924f5e9fd9c8a95c8d88872d92e
+Merge: 58ec8d9 e1ea0ee
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 1 16:24:32 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 58ec8d9b45942834914194808a7143ad15165f07
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Jun 1 16:23:58 2012 -0400
+
+    clang++ warnings resolved.
+
+commit e1ea0eeb71dff7c005d51cdddbd7e041ac056810
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 31 17:14:56 2012 -0500
+
+    small changes so that clang will compile code without warnings
+
+commit 1f92399071761ac17ae21b36a026cd53c90c5625
+Merge: de0dc0e 905d12d
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 31 16:14:19 2012 -0500
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit de0dc0e7cd3848f2620c70b7dd577ab3b5cc3dc3
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 31 16:13:51 2012 -0500
+
+    makefile added (or re-added as it seems to have disappeared)
+
+commit 905d12da99f3f135d9417cb04463dbc0166448bf
+Merge: e307b34 53370d0
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed May 30 17:01:55 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit e307b34511164e7c0f3fdd460069d55e1a84c038
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed May 30 16:56:36 2012 -0400
+
+    Changes to initial condition generation.
+    CMesh now verifies normalization of nucleon density.
+    Attenuated initial conditions require new parameters:
+    double GLAUBER_PP_ENERGY_FRAC adjusts the overall energy scale where 1 assumes incoherent pp sources.
+    double GLAUBER_SIGMA_ATT allows for a statistical removal cross-section other than the pp cross-section.
+    double GLAUBER_WN_ATT_RATIO scales between attenuated and wounded nucleon type source shapes.
+    These parameters only matter when GLAUBER_SAT == true.
+
+commit 53370d0807bbcf23af3c4860ffe1e62b8909822c
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 14:52:57 2012 -0400
+
+    hopefully fixed now
+
+commit 47236d2409ea16ea0ba1a0170ab13f527e81201d
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 14:38:07 2012 -0400
+
+    still at it
+
+commit 1c1b0e1f7c75a0ba2c1824716b7f87c06e1cef12
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 14:34:31 2012 -0400
+
+    still at it
+
+commit 9493fc37036be9e633833b6edb53d6d0ab0e2c7d
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 14:32:00 2012 -0400
+
+    still testing
+
+commit 0480477f8ad7abbbbd28bc468f38e59859f61fe8
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 14:27:03 2012 -0400
+
+    still testing
+
+commit 03746d5da0f7c9369624ffadbc874a80bb8082b7
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 14:15:44 2012 -0400
+
+    still fooling around
+
+commit e9223ba93ff34b18adc3ba0e61ceaae8a6f53e46
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 14:12:06 2012 -0400
+
+    still testing
+
+commit 59b30dca5f98acbf27f614b9f2543bfeef714aad
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 13:57:43 2012 -0400
+
+    testing ...
+
+commit cd1da02ba502de8fd20222d5c2e88a5d4c6a986f
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 13:26:49 2012 -0400
+
+    added print statement, took out comments
+
+commit 56ca01314d39a1e63601f2abc1a89933be5e4e21
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 13:01:13 2012 -0400
+
+    adding osuhydrotob3d.cc
+
+commit 504de4e92809aaaf707fa548b588fd43d67ed4e8
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 12:58:37 2012 -0400
+
+    adding files from resinfo
+
+commit 46204e10ed2e359f40c4b2aa15afae4a93ae89d5
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 12:54:02 2012 -0400
+
+    adding coral back
+
+commit e429c60da1d165da8c6701539f5fa776d10c99c7
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 12:53:20 2012 -0400
+
+    still trying to clean out files
+
+commit dc8efe7ae52e82859e08d19ec042264a7e3fbcb2
+Merge: b32c05c fb4a81e
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 12:51:49 2012 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit b32c05ca3447008952b05a27f225ba52b57f1912
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 12:51:01 2012 -0400
+
+    putting coral back
+
+commit 59e1f920e789a5833215bb93fba7e29db5a181b4
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu May 17 12:46:46 2012 -0400
+
+    cleaning out coral repo, then starting again
+
+commit fb4a81ea6b496553f753daa7b66afcdd9a28b6d2
+Author: Scott Edward Pratt <prattsc@dev-intel10.i>
+Date:   Thu May 17 12:43:08 2012 -0400
+
+    renamed CorAL all lower case
+
+commit 61229a2d3066fe4298f345bd940e14013ff45816
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon May 14 12:27:40 2012 -0400
+
+    Check fix.
+
+commit b7e0e7e5eac06390296224a8a9a2bd511dce2b4c
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri May 11 16:58:55 2012 -0400
+
+    Improved memory management by mesh, eos, and hydro classes.
+
+commit f8be505872bdb5f4dd37c66e4c8f21293e4c3adc
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri May 11 14:41:27 2012 -0400
+
+    delete oldMesh;
+
+commit e581b83ff9d4fb2d32311fd35677b7cf4fc5678b
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu May 10 16:25:26 2012 -0400
+
+    Proper file closing for osuFOS.dat.
+
+commit dcf3d5bdba8480136d99a9c102c6aac02e6217f4
+Merge: 96ed86b e4f6cff
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed May 9 21:44:15 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 96ed86b4759d73f752214da7ebd4b2d88a5fb0fd
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed May 9 21:43:57 2012 -0400
+
+    Fix and resubmit.
+
+commit e4f6cffbcc839c0d4e1a97d58ea8cbeab36ccb23
+Merge: c218ff4 13fa058
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed May 9 14:42:41 2012 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit c218ff420aa675ead2ddcdff6d68ed29361446e3
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed May 9 14:42:01 2012 -0400
+
+    numerous changes to read in new hydro surface (osu)
+
+commit 13fa0581f2ab18b34fcb87b8d8280e4372524f35
+Merge: 7ac61ac c40ebc2
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue May 8 13:28:47 2012 -0400
+
+    Merge branch 'virtualMesh'
+    
+    Conflicts:
+    	isHydro3/src/CCell.cpp
+    	isHydro3/src/CHydro.cpp
+
+commit c40ebc2eff62d48a473c919db36cc166ee7eb2d3
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue May 8 11:53:13 2012 -0400
+
+    Better 2d freezeout algorithm added with output called osuFOS.dat
+
+commit 7ac61ac57a7cb0e01765b29b4594a0d104e44bfc
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu May 3 11:35:13 2012 -0400
+
+    Literally Nothing.
+
+commit 8cd259746113d2029c2b63f631b559d414cdfd22
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu May 3 11:33:39 2012 -0400
+
+    Meh.
+
+commit 5c0c4b01bce447d5c2d6d86cfbd51755845aaa3a
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu May 3 10:52:41 2012 -0400
+
+    Nothing.
+
+commit 1864510f60260c7e5728f12f881c39402a6054a2
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu May 3 10:48:01 2012 -0400
+
+    Nothing substantial.
+
+commit abbd35fcab118db8b6030729fe7e66aa1f8b7efd
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Apr 30 15:44:35 2012 -0400
+
+    Bulk viscosity finalized:  JHBARC * mBVRatio * getS(e) * exp( -0.5*pow((getT(e)-mBVCent)/mBVWidth,2));
+    
+    Set by parameters:  EQOFST_BVCENT and EQOFST_BVWIDTH.
+
+commit bbd081d1db8dfcd88bebb0df148cfe1898b4c535
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Apr 30 15:25:55 2012 -0400
+
+    Local bump in bulk viscosity.  Scaling to entropy missing.
+
+commit c7cb4584be9819f9fd98e547bae52f4d05e52b72
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Apr 25 21:12:04 2012 -0400
+
+    First attempt - generates crazy entropy etc.
+
+commit 176c4ceecf2f73b0b1e6edd6bd30e2e980b8ce54
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Apr 25 16:07:39 2012 -0400
+
+    Changes to initial condition calculations.
+
+commit 02911a51afa8b8830a11db43db95df4d23921ba5
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Apr 25 14:42:17 2012 -0400
+
+    update bug fixed.
+
+commit 46def371ba1907bc80f829c4e4e7ea06e890f93f
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Apr 25 14:14:50 2012 -0400
+
+    octMesh is working version of old code; fullMesh to be used for non-reflection symmetric cases.
+
+commit 28119e61f455f58316346242932eeca83584218d
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Apr 24 21:10:02 2012 -0400
+
+    Temp.
+
+commit 11146ce17b8f26282d71ec84b911925cfe3d6b72
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Apr 24 20:59:09 2012 -0400
+
+    Preliminary virtualization coded but not compiled.
+
+commit 2ea0fd9b6baf822aa615665fcd6d135d7402b55e
+Merge: a456d05 ef73e53
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Apr 24 17:32:18 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit a456d05b3c26cd7f1d58fa0474001eec248f5ff3
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Apr 24 17:31:51 2012 -0400
+
+    Additional options added for shape of shear viscosity.
+
+commit d4fe7568c63785c95ca27298ae69e60a93dbcb11
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Apr 24 16:48:31 2012 -0400
+
+    Virtualizing work on cmesh.h
+
+commit ef73e53681a44bf075f9c632c69b624050497ddf
+Merge: ea343d6 c3b030a
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Tue Apr 24 13:42:04 2012 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit ea343d6940e3cab3f6e92459f82f92f97c965c9a
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Tue Apr 24 13:39:30 2012 -0400
+
+    changed weighting in hydrotob3d so that it more accurately modeled trapezoidal shape of cells,
+    especially for rapidly disintegrating part of  end of reaction,
+    
+    also added the ability to invert non-symm mattrices in gslmatrix.*
+
+commit 41edad1d6ba924b2338134837e0e466756c5afee
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Apr 24 12:14:34 2012 -0400
+
+    Realistic eta/s implemented.
+
+commit c3b030a44156e3f66442e30fe972afeba8dd2899
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Apr 23 17:11:49 2012 -0400
+
+    Freezeout surface outputs correctly for more non-standard geometries.
+    Freezeout surface checked that r(phi) is well-defined.  Error message to stdout upon failure.
+    Hydro continues to run after central bin is below FOTemp, quitting when all cells are below FOTemp.
+
+commit 9ad4b6624c99e911c700da278a78c6c4e72cc219
+Merge: 0c12ba5 915259c
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed Apr 4 14:52:41 2012 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 0c12ba5fe1a749249d424f4d4bbec2d10fecfc98
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed Apr 4 14:52:11 2012 -0400
+
+    fixed minor error in consolidate.cc
+
+commit 915259cd30207f0addb13745d47e06e5afc3d0f8
+Merge: 29ad939 cb33735
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Mar 30 15:42:35 2012 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 29ad93953eb144dfd52f6320893c89165fc8b8c7
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Mar 30 15:41:45 2012 -0400
+
+    Added support for KLN read in.  Added parameter for longitudinal radius.
+
+commit cb337354a78e7609071d060d5c6acceb6af0ce63
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Mar 29 14:14:08 2012 -0400
+
+    minor changes to consolidate.cc and makefile
+
+commit 3c910c064329d9c995518b8116e003ae22bdc002
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Mar 29 13:15:18 2012 -0400
+
+    added consolidate.cc
+
+commit 0a026ff92553d88a1f9c141249b189bd6be6aee2
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Mon Mar 26 17:18:09 2012 -0400
+
+    adding ability to use 3d hydro output for cascade
+
+commit 889deedc6785eaecd3a23c7de5db27940d83e1b6
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Sun Mar 25 10:21:14 2012 -0400
+
+    Change to freezeout.dat
+
+commit 5bcc3a7402cb463d754d936d775b346d7cb717a1
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Sat Mar 24 23:32:10 2012 -0400
+
+    Added 3d support to the FO Surface.  Change to anal is not intended.
+
+commit a3e12bc661b8c29f55d9de7baa88a0edc5b1c1c6
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed Feb 8 16:03:17 2012 -0500
+
+    added new files for star and phenix
+
+commit 1e591ecf22fa2f5bef9bc084f336f618e48ecc3e
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed Feb 8 09:46:50 2012 -0500
+
+    numerous minor changes to analysis routines
+
+commit 0f48cc9cd3a2255595dc7936604d091e268230d3
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Dec 27 10:41:40 2011 -0500
+
+    Just making sure the right version is up.
+
+commit 2754e78380ad39f99a83aa9eec14eed31db19109
+Merge: ee885a3 75fb912
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Dec 23 09:05:57 2011 -0500
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	anal/src/anal_spectra.cc
+    	isHydro3/src/CCell.cpp
+    	isHydro3/src/CHydro.cpp
+    	isHydro3/src/CMesh.cpp
+    	latinhyper3/parmaker.cc
+    	latinhyper3/ranges.dat
+
+commit ee885a3349e25a28849bfe53ed9b2ef78070398c
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Dec 23 08:53:29 2011 -0500
+
+    Lots of changes little changes to hydro.
+    
+    Shear tensor can now be initiated proportional to pressure using HYDRO_INIT_NS_TXXP in pmap.
+
+commit 75fb9128d46828b8873df4e021fc75c0ef2e86db
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Fri Dec 23 01:38:22 2011 -0500
+
+    minor changes to analysis routines
+
+commit e81a9c2e5e8d28b72c9d096302668d4eb2102323
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Dec 8 18:04:51 2011 -0500
+
+    Changed glauber cross section.  Added simple spectra output to fill.  Other changes to run directory. (Will be removed from repository eventually).
+
+commit 63d8f2a07d41b1b375be89233035a9c88f26f37f
+Merge: b480f65 55ac027
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Mon Dec 5 20:28:09 2011 -0800
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 55ac027c7f0e83199d4fa6df5a6308b84195b468
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Dec 5 21:07:00 2011 -0500
+
+    Josh's working version of everything.
+
+commit b480f6528effb85d11e920fa4e89bfaf25864bb8
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Dec 4 12:34:51 2011 -0700
+
+    fixed master makefile
+
+commit 69aba53f23f07f3262dabcbf1acbdcb6977b51ab
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Fri Dec 2 12:57:45 2011 -0500
+
+    minor changes
+
+commit 44501cb397e1a89fbfe587614f59d6d8a457e934
+Merge: 74903d7 c611e20
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Dec 1 14:27:06 2011 -0500
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	anal/src/anal_spectra.cc
+
+commit 74903d709a55bd3d061d1d74d7017654015f2ef4
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Dec 1 14:11:51 2011 -0500
+
+    Some tweaks to the hydro.  Removed some print statements from anal codes.
+
+commit c611e203b207e02c6092e671f5e6067f2e35af58
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Nov 17 03:06:30 2011 -0500
+
+    sped up CRandom::generate_boltzmann for smaller T/m while maintaining perfect accuracy
+
+commit 9ebb01df925688d3f3763ffe0f0567b43382b71d
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed Nov 16 20:34:03 2011 -0500
+
+    numerous changes to add ability to properly handle PHENIX p spectra (no lambda decay)
+
+commit e3028121c3c6b52fb5d3b0b6b8c9786d4c7700a5
+Merge: b1a6c43 f67c89d
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Nov 13 20:53:37 2011 -0500
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit b1a6c437ee7d54056f925d7da86dfa85543ad77b
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Sun Nov 13 20:52:53 2011 -0500
+
+    added some functionality for balance_general and added decays to etas
+
+commit f67c89da7b3eb6ef6632e8664c1c1786f51d8c9f
+Merge: 0e06f97 4b9356d
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Nov 9 11:09:46 2011 -0500
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 0e06f97d157b8140028c0a8578bde2be825d076d
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Nov 9 11:08:07 2011 -0500
+
+    Minimal changes to hydro.  Removed print statements from b3d.  Fixes to run.
+
+commit 4b9356d3b8b0f4b98e34b717a70e56e4b8159316
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Fri Nov 4 06:43:07 2011 -0400
+
+    changed array size for char array
+
+commit 914d08f6c9df36171872c013c38837c8b3a444bc
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Nov 3 23:19:08 2011 -0400
+
+    some debugging of sourcecalc_hdf5_multibin
+
+commit 8b78f5cefdf6466e50b4da00b21f69688e200f90
+Merge: 4951905 8beb430
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed Nov 2 13:28:29 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 49519058d00ff4d7ff51dbc32a5dc7a152a6735f
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Wed Nov 2 13:28:01 2011 -0400
+
+    added distill.cc
+
+commit 8beb430900a7c8da24c6514a65625a2d1eaff9c2
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Oct 20 15:05:19 2011 -0400
+
+    Nothing serious.
+
+commit 3ce13fe9e85d2574580effb63ea87bc7e17c690a
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Oct 19 14:37:37 2011 -0400
+
+    Seg Fault fixing on mo.
+
+commit 0ff0361630afce2193a9463a91b6b4ed9dc0acb0
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 18 18:27:21 2011 -0400
+
+    CMesh.cpp wasn't saved.
+
+commit d08c79862cf4ea65045b4c3e15ef3e3c7bcedb26
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 18 18:23:43 2011 -0400
+
+    Removed remaining coral.h references.  Cleaned up #include statements in .cpp files.
+
+commit 5388ae42924c8258d02cbd0679f42a3bef616ec3
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 18 14:53:41 2011 -0400
+
+    Missing function needed for openmp support.
+
+commit a5f7bb3bed5ba286f58a056e7e832b216a649bbf
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 18 14:37:53 2011 -0400
+
+    Repairs to Oscar Hypersurface output routine.
+
+commit 5255454348fe1036ebe898df7d777b402994bc56
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 18 11:58:54 2011 -0400
+
+    function return warnings.
+
+commit 03e739990478dc3feee1ea647f8ae0348fdc442c
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 18 11:54:37 2011 -0400
+
+    Fixed some warnables on icc.
+
+commit 1fee4e3a9ea32726ea586fa1665e31a60947c606
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 18 11:47:44 2011 -0400
+
+    Changes for compiling on hpc.
+
+commit 0a3821ed7b6ac6d76603e56472efd4cc6dad2fec
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 18 11:18:26 2011 -0400
+
+    Tweaks to default values.
+
+commit 9ddbad090ab749efbb2faf27adeb78abdfc14f26
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Oct 17 14:01:50 2011 -0400
+
+    Testing remnant removed.
+
+commit 171abe4596c560aea8a0b9d3e92009275b59e6f7
+Merge: 2b86e58 927b0d3
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Oct 17 13:57:26 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 2b86e584917a47ac0f29e68f42bdb99d3c854a5a
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Oct 17 13:56:56 2011 -0400
+
+    Fixed integrals.  Fixed term in energy conservation (missing metric).
+
+commit 927b0d32a0352b323deff7b34e098ab5bb2b4f3d
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Mon Oct 17 11:35:22 2011 -0400
+
+    very minor changes
+
+commit 14b610df255e2e0ce101fc0df94757f7b0081da1
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Oct 17 09:21:50 2011 -0400
+
+    No CHydro::printActiveCells();  Correct initial conditions.
+
+commit ba9579be09bc9bf2e585b74346be51b613ed0e05
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Oct 14 16:23:48 2011 -0400
+
+    No reintegration for Glauber condittions.
+
+commit a51ce5e9501bc6e06eaf33ae3619d461964463f1
+Author: Josh Vredevoogd <vredev16@msu.edu>
+Date:   Fri Oct 14 14:56:30 2011 -0400
+
+    Working version from here to mo.
+
+commit ea81fb4f2950d7aeacd1d7a3e87b6edf8c896bb7
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Oct 14 13:35:41 2011 -0400
+
+    Integral fixes.
+
+commit 684d2d54133768aca12cd8ec2a5795b44a8a9266
+Merge: c92214b 3a68547
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Oct 14 13:02:29 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit c92214b959c2314d4c7eb34cbe5c4aa3f2f376c2
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Fri Oct 14 13:02:05 2011 -0400
+
+    Extra prints removed.
+
+commit 3a685473a20cc2c3c1fd28b71cf3c4b10cf03d55
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Fri Oct 14 09:43:09 2011 -0400
+
+    now name will include everything to end of line, and resinfo.Print() also prints name
+
+commit 3d0b640e63d6a128afeab8ee7e924f27931eed96
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Oct 13 10:10:47 2011 -0400
+
+    corrections to CResinfo::CheckForDaughters
+
+commit 3b1afcb8d7e0ab4cc013f63b40716a12846ef218
+Merge: c92408d 33f212f
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Oct 13 09:34:26 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit c92408def0ae8ff7c172b72e8dd0c90ea771f2de
+Author: Scott Pratt <prattsc@msu.edu>
+Date:   Thu Oct 13 09:34:10 2011 -0400
+
+    added functionality CResInfo::CheckForDaughters(icode)
+
+commit 33f212f0b196acbf01c5beeaa2a714d68f619afe
+Author: Josh Vredevoogd <vredev16@msu.edu>
+Date:   Wed Oct 12 14:26:25 2011 -0400
+
+    Better filename management.
+
+commit 52506e9937cb9485e53dffdf629e635e80aaf4fc
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Oct 12 11:12:44 2011 -0400
+
+    Moving to mo.
+
+commit c2bbfd68850a6376da694e44bd05f5c8712f61e3
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 11 16:07:23 2011 -0400
+
+    random print pulled.
+
+commit 31daff35b5e8a25f2ced24e861e209aa45914a6b
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 11 15:59:21 2011 -0400
+
+    3d fixes.
+
+commit c8924aae2df06021a96772656b487ccc001e2aec
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Oct 11 11:44:16 2011 -0400
+
+    Fixed integral calculations - conserves T_00 @ 0.1% level.
+
+commit a4b4db2852a1014f4bbce5f729a232818bb36f08
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Tue Oct 4 00:02:39 2011 -0400
+
+    minor changes to CPart init so that print will work outside of cascade context
+
+commit cc89ed584304461118e6303dfed6645f3f9de488
+Merge: a7b34b0 0724fee
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Mon Oct 3 18:53:30 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit a7b34b043e2e2e40bcc6b8d77cc24288d0f45157
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Mon Oct 3 18:52:57 2011 -0400
+
+    small changes, added minor functionality to CPart::Copy
+
+commit 0724fee060dd3134cf3a832dfa0046626a668c36
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Mon Oct 3 14:28:31 2011 -0400
+
+    Fixed CMesh::addInitialFlow() for 3d cases.
+
+commit 51814d100411b23c2c71d79fd7a75f50dcad22d4
+Merge: 13cd063 6889c5d
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Fri Sep 30 16:25:53 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 13cd0630bfcb2f4b388941ca5c3199015e6951a4
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Fri Sep 30 16:24:30 2011 -0400
+
+    Stable commit of isHydro3-EtaTau for preliminary testing.
+
+commit c3fa51dcd650dc3f236bd50b77317b3bc5145222
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Mon Aug 15 10:07:10 2011 -0400
+
+    Added terms for derivatives of shear tensor.  Unstable.
+
+commit 6889c5d0f7c982752ea20c830baa6a4d3cadc260
+Author: Scott Pratt <scottepratt@prattsc-2.user.msu.edu>
+Date:   Mon Aug 15 10:06:57 2011 -0400
+
+    changed a few more things
+
+commit f279652d5ff1ca97c70f27ed48d385554f285705
+Author: Scott Pratt <scottepratt@prattsc-2.user.msu.edu>
+Date:   Mon Aug 15 10:02:31 2011 -0400
+
+    moving stuff around
+
+commit 0fd599b34ba515367640d67fa5443009fca7c770
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Fri Aug 12 11:57:59 2011 -0400
+
+    hbt analysis fixes
+
+commit 91fde018f31a4d7d47cce25107fad38575b21474
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Thu Aug 11 22:35:12 2011 -0400
+
+    innumerable changes,
+
+commit 929aac1b013932332525b060f73910715863db85
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Tue Aug 9 17:03:12 2011 -0400
+
+    working on hbt analysis
+
+commit 388f7557cb30a7f5fc8ea3e49a5faf2401309d93
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Sun Aug 7 13:08:32 2011 -0400
+
+    Worthless print change to CMesh.cpp.
+
+commit 1147f33d97404ec53629ac97fe88abc1f4623246
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Sun Aug 7 11:58:49 2011 -0400
+
+    Back to correct EOS and initial conditions.
+    Integrals remain unfixed.
+    Many changes in branches not yet merged.
+
+commit 42a70092e2474787e06899020c3a0ec3312c12a2
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Wed Jul 27 16:44:15 2011 -0400
+
+    More unphysical changes, to eos and initial conditions.
+
+commit a341ba174089a5dd86c0267cb8a349e7fc78880f
+Author: Scott Pratt <scottepratt@13-167-134.client.wireless.msu.edu>
+Date:   Wed Jul 27 15:36:53 2011 -0400
+
+    consolidated v2 analysis
+
+commit ed175e0ea38dd4cb9349e1d085e9e4e4f43f09d7
+Author: Scott Pratt <scottepratt@13-167-134.client.wireless.msu.edu>
+Date:   Wed Jul 27 15:36:11 2011 -0400
+
+    consolidated hbt stuff
+
+commit 1faccfa09c3580b95a694f106d5f0b2130a7f9d1
+Author: Scott Pratt <scottepratt@13-167-134.client.wireless.msu.edu>
+Date:   Wed Jul 27 15:35:47 2011 -0400
+
+    changing hbt analysis
+
+commit abe985eaaf885fa45c16ec58d5f6790b446f3d99
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Wed Jul 27 11:15:04 2011 -0400
+
+    playing around with spectra analysis
+
+commit fc4e48e790080c019d833666ce069f9e208e1154
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Tue Jul 26 15:49:14 2011 -0400
+
+    Spots output changes.  Incorrect initial condition.
+
+commit 7ab74a35f663216344e75b56b3074479bd8e88f4
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Tue Jul 26 15:32:19 2011 -0400
+
+    Little changes.
+
+commit 85c2dfb4f61f2beb94ff2f1e6c40efe3bc17b020
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Sat Jul 23 10:01:48 2011 -0400
+
+    fixed case problem
+
+commit edb8a2e641e4ba6d740a0a819a444463ba28e774
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Sat Jul 23 09:55:52 2011 -0400
+
+    small change to output
+
+commit e240010a15d7e6842e4c34e84ae4edf1a91b2a92
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Sat Jul 23 09:29:24 2011 -0400
+
+    adding another file
+
+commit c445cec546fee789e1292575652553241fdee023
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Sat Jul 23 09:28:44 2011 -0400
+
+    adding a file
+
+commit e92d4c5cdae4061e605dec06862eb5af690174d2
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Sat Jul 23 09:25:19 2011 -0400
+
+    made more efficient calc of gaussian sources
+
+commit dc9d0894d98c0025ac3a82fe354f17e303d40c44
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Fri Jul 22 15:47:47 2011 -0400
+
+    adding hbt analysis routines
+
+commit 89d9edcca8b353bad966a13238e9bf37e017f8fa
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Thu Jul 21 17:12:29 2011 -0400
+
+    added normalization correction to CSourceCalc::CalcEffGaussPars
+
+commit f1dd0eda5a67ceba6b406906a2659badcd024b73
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Thu Jul 21 17:08:15 2011 -0400
+
+    added getnorm function to sourcecalc.cc
+
+commit 438ab0e1288c9501352d3603869fb27aa636a247
+Author: Scott Pratt <scottepratt@prattsc-2.user.msu.edu>
+Date:   Thu Jul 21 10:54:07 2011 -0400
+
+    hopefully all is fixed with hbt binning
+
+commit 61e8e69f41c2ee177570d17f9e346c8deb9fba08
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Tue Jul 19 03:08:21 2011 -0400
+
+    fixing up scalc multibin
+
+commit 38bd1dc9f1f7f163d9c3a395e479388477f08fd4
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Mon Jul 18 11:23:11 2011 -0400
+
+    just changing bins for analv2
+
+commit 14c9088ace6b5666b6500c52a5edfd4e0b9753bc
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Mon Jul 18 11:00:49 2011 -0400
+
+    fixed booboo
+
+commit 620ad14b28ea3bb372dc822cb04cb8bf6a8c564e
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Mon Jul 18 10:11:30 2011 -0400
+
+    added routines to calcv2b to help analyze principal components for v2
+
+commit bea93e875dbc27e482812f538bf826047130e656
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Wed Jul 13 21:50:09 2011 -0400
+
+    erased output statement
+
+commit 24b1449eb3d7d37a53165e6656858fbeca9e8995
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Wed Jul 13 21:49:04 2011 -0400
+
+    fixed anal_spectra again
+
+commit d42ba29748405fbf0005e59e899d4fb8604a1a67
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Wed Jul 13 20:53:16 2011 -0400
+
+    oops another booboo
+
+commit dc27f14bc2c098d4278c1602efbfd0e1f467e3be
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Wed Jul 13 20:49:34 2011 -0400
+
+    fixed spectra_anal
+
+commit 4f8ee2e656b78f1c9c4ab24faaaddbbd0d81425d
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Wed Jul 13 16:32:48 2011 -0400
+
+    added error to calcspectraB
+
+commit e034d6488c41ee18f85b6a113f25c3ef49d4ef29
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Wed Jul 13 11:43:55 2011 -0400
+
+    fixed lrint recasting for certain compilers
+
+commit 88c7aeea6e19db8842de38c0a3262bde9aba06a0
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Wed Jul 13 11:40:29 2011 -0400
+
+    after tremendous effort, finally fixed stupid error in anal_spectra.cc
+
+commit c2bc24939561c91868e6e8dc5e316747f4b8fc7c
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Tue Jul 12 17:47:47 2011 -0400
+
+    cleaned up output
+
+commit ac4ba1f38c41e2d6640b2948e322a04f51107b08
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Tue Jul 12 17:31:23 2011 -0400
+
+    lots of testing stuff
+
+commit e9cc5d213516d244ec911d7ec6cbf04cb3d339bd
+Merge: ac2558e 48a0605
+Author: Josh Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jul 11 16:05:41 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit ac2558e8af60c9ea6348b4c0ab6cc1388b20cadb
+Author: Josh Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jul 11 16:05:23 2011 -0400
+
+    Small output change.
+
+commit 48a06058b5dbcfa36a6668a473c97950de0e84d2
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Tue Jul 5 14:08:45 2011 -0400
+
+    fixing non-errors
+
+commit 3c789eabee88cdb6ddaa3a77013c629712e68785
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Tue Jul 5 13:55:55 2011 -0400
+
+    no real change
+
+commit b31d957f37f1e91d69da456e8095d41eca8d8b09
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Tue Jul 5 13:53:22 2011 -0400
+
+    fixing an int->double
+
+commit 851c456bb11dc2608cabd98e2c26407f5470f45d
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Tue Jul 5 13:51:19 2011 -0400
+
+    fixing endlines
+
+commit 0d02ddf72dfc02f442c5e99d1c3c069c747c7983
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Tue Jul 5 13:43:07 2011 -0400
+
+    erased virtual keyword from Calc_Paul def
+
+commit 09bcf2543f1abad41b92938b93bd5265c949e3f6
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Tue Jul 5 13:31:35 2011 -0400
+
+    no real change
+
+commit ce7c1f1c2ceda288108cec691205ae5d06413f7e
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Mon Jun 27 22:31:16 2011 -0400
+
+    not real changes
+
+commit f6b0b6688af091b96861be6fbd90144897e27895
+Merge: 284ec38 e21bebe
+Author: Josh Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jun 27 13:17:15 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 284ec38957410e2ad3fbbebac01e126b9130b470
+Author: Josh Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jun 27 13:16:49 2011 -0400
+
+    Exactly as it is on mo.
+
+commit e21bebe7837f8e3a5e2bade1cdd95b73799a7ec8
+Merge: c8058a0 0c73d39
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Fri Jun 24 14:52:31 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit c8058a073fd384cc51bd010dead0871a8b890d20
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Fri Jun 24 14:52:15 2011 -0400
+
+    changes to be used for other project
+
+commit 0c73d395c74f1622d0b4ae22bc712b15c4f7233f
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Jun 23 13:41:30 2011 -0400
+
+    Xdmf used for mesh dumps if set in hydroDef.h.
+    Compiling without xdmf install requires removing lines from makefile.
+    stdout more helpful - outputs 50 dots regardless of user specified time steps.
+    Each dot represents 1/50th of the rise of 1/T^2 toward 1/(FOTEMP)^2.
+    setting HYDRO_TSTEP -1 now allows program to run until the central temperature is below FOTEMP.
+
+commit d9857b0b49c8fcde56bb0a4c5926a4fac3176d21
+Author: Josh Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jun 21 09:39:31 2011 -0400
+
+    Turned off stuff reliant on hdf5 and xdmf installations.
+
+commit a0d041ed79a24b1f762ec154be187c699ea780af
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jun 21 09:07:33 2011 -0400
+
+    3d parallelization added.
+    Xdmf used for full output when available.  Tested for multiple outputs.
+    Active deadening re-enabled.
+
+commit 76c094da453cd8b173d7e474a8f5df7fb966c714
+Merge: c00335e b0bf08c
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Tue Jun 21 08:17:23 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit b0bf08cd1bf029f15afb98b9acbb90f67d08547a
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Tue Jun 21 07:03:17 2011 -0400
+
+    fixed bad error, some (many) particles weren't decaying after TAUCOLLMAX
+
+commit c00335ee361be1cd5cad3bd782e84a23af5d4b47
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jun 20 22:31:20 2011 -0400
+
+    Added function to produce xdmf headers and hdf5 heavy data for meshes at a given time.
+    Potentially serious bug in CCell::GetPixy(int,int) fixed.
+
+commit 45283ccfb3e8d88a38a205ef1e5cc5586db5ab36
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Jun 16 10:13:54 2011 -0400
+
+    Simple hdf5 file write in CHydro.
+
+commit bfbaf178101dea369a4577710470fbb19d5b2214
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jun 13 13:51:09 2011 -0400
+
+    Deactivated integral loss calculation to avoid seg faults.  Issue wasn't clear.
+
+commit 11383bbaa3fa12d892059f930edc90afc7a73ccc
+Author: Josh Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jun 13 10:40:46 2011 -0400
+
+    run/make now installs missing programs.  Also understands OpenMP.
+
+commit a6764f72210f68423d17e61ad29a8344608f6f78
+Merge: d5c4dce 2d184d6
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Sun Jun 12 18:43:43 2011 -0400
+
+    Merge branch 'CellHelper'
+
+commit d5c4dcee1cc2411d7d2baac428cb496020191daf
+Merge: b2f0364 01d58a8
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Sun Jun 12 18:43:32 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 2d184d6b59a3187062f67357646aa7329c1306cb
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Sun Jun 12 18:38:54 2011 -0400
+
+    dx[] goes from CCH back to static since it won't be different for different cells in the same parallel integration.
+
+commit 898c1f9cd64bf1ca19e0c60c04e959e51eab369c
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Sun Jun 12 15:56:22 2011 -0400
+
+    Shared memory parallelization.
+
+commit 01d58a80482a9c16d37f5fa17932d04ecb4dc6d2
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Thu Jun 9 16:56:49 2011 -0400
+
+    small changes
+
+commit 11f95e2999d60a8e86e4f762c57de0d25bb20879
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Thu Jun 9 15:37:11 2011 -0400
+
+    Changed concept of the equation of state to allow parallelization.
+
+commit b2f0364506227871b22eae2bcb145e1b43a3b523
+Merge: 6d270a8 b907132
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jun 6 13:27:46 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 6d270a88ed4697a3366bf92fb723834bcdac4680
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jun 6 13:27:38 2011 -0400
+
+    Something.
+
+commit b907132c78a651358788f696e3c097632c809911
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Mon Jun 6 13:22:23 2011 -0400
+
+    created new function checkDirectoryExistence(string dirname)
+
+commit 6ac108c49d2b3a9a2a3faa947ed1ae933b7d4380
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Mon Jun 6 11:25:11 2011 -0400
+
+    Changed something tiny.
+
+commit 88a2e46b52b00b3dd029afd52bde9abeafc181cf
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Sun Jun 5 15:32:11 2011 -0400
+
+    numerous fixes to inelastic scattering routines so that they work correctly with Bj reflections and with NSAMPLE != 1
+
+commit 734aab6681cbff28fb18a3cd5999ddffe0c1e4ce
+Merge: 4ff5b40 712878d
+Author: Joshua Vredevoogd <vredev16@msu.edu>
+Date:   Wed Jun 1 17:31:17 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	isHydro3/fixed.param
+
+commit 4ff5b40c4a82025f7c32a04e1722eace989f90ed
+Author: Joshua Vredevoogd <cleverless@13-165-79.client.wireless.msu.edu>
+Date:   Wed Jun 1 17:28:47 2011 -0400
+
+    Added checks of file names and directories.
+
+commit 712878da33397d4a2dbbd0f361013674cfbdf072
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Wed Jun 1 17:24:02 2011 -0400
+
+    numerous changes to fix/test hydrotob3d
+
+commit c0d0dc8f18c59dff92732785d3afe76c84c74353
+Author: Joshua Vredevoogd <cleverless@13-165-79.client.wireless.msu.edu>
+Date:   Fri May 27 14:33:40 2011 -0400
+
+    Returned initial state to glauber.
+
+commit e8f8fec7a70e06ef86cacea69d980821127baa0e
+Author: Scott Pratt <scottepratt@curly.home>
+Date:   Fri May 27 07:47:32 2011 +0200
+
+    mostly testing, then uncommenting
+
+commit 7bc2c0b49fc901a650e8d01a686148785b188041
+Merge: d6a2862 e0083b6
+Author: Joshua Vredevoogd <cleverless@13-165-79.client.wireless.msu.edu>
+Date:   Tue May 24 17:29:16 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit d6a28627bbfed5b2796c6d0589443c9e19761a87
+Author: Joshua Vredevoogd <cleverless@13-165-79.client.wireless.msu.edu>
+Date:   Tue May 24 17:26:14 2011 -0400
+
+    Added cubic spline smoothing to equation of state.
+
+commit e0083b6ca7fb34472f95dccc84aadadb95d20873
+Author: Scott Pratt <scottepratt@curly.local>
+Date:   Thu May 12 23:29:15 2011 -0400
+
+    small changes, one very small error correction, mostly debug checking
+
+commit f7d37f4596666dadfa4a894f8191af48a3a9f956
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Wed May 11 16:23:16 2011 -0400
+
+    fixed decay stuff
+
+commit f4315112ba96a02eb686d503bd04d91444cba1d4
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Wed May 11 15:24:07 2011 -0400
+
+    small correction to makefile
+
+commit e552d0dcc328e4bc78a21b10622520b22694f5ca
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Wed May 11 15:22:13 2011 -0400
+
+    more fixes for decays
+
+commit 730e9ec2d9648e08f045a1508c60e74f154d5316
+Author: Scott Pratt <scottepratt@laserroom-pc.intranet.nscl.msu.edu>
+Date:   Wed May 11 15:18:16 2011 -0400
+
+    added resonance stuff, mainly ability to do weak decays (decays_pdg_weak.dat)
+
+commit dddcbd41502ab08f26295e7f2bfa2d4a8f8ea6ed
+Merge: 978098e 97e27ba
+Author: Scott Pratt <scottepratt@Scott-Pratts-MacBook-Pro.local>
+Date:   Wed May 11 06:02:25 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 978098e5f6457ceb23a0e0259f0637a1f36d4da6
+Author: Scott Pratt <scottepratt@Scott-Pratts-MacBook-Pro.local>
+Date:   Wed May 11 06:02:07 2011 -0400
+
+    small changes for Paul
+
+commit 97e27bac94e01e3b384c8f6aae6af3fe4a0bf372
+Merge: 2ff4e67 3e8b778
+Author: Scott Pratt <scottepratt@13-161-124.client.wireless.msu.edu>
+Date:   Tue May 10 18:35:16 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 2ff4e674dfc565448650f871fdbc4b1533b5813d
+Author: Scott Pratt <scottepratt@13-161-124.client.wireless.msu.edu>
+Date:   Tue May 10 18:34:54 2011 -0400
+
+    edited spectra analysis routines
+
+commit 3e8b778e4cdeabad6b7edd2c21f3c197bcdb51d9
+Merge: 6037fe1 f83d40a
+Author: Joshua Vredevoogd <cleverless@13-165-79.client.wireless.msu.edu>
+Date:   Tue May 10 15:14:40 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	isHydro3/fixed.param
+    	isHydro3/src/CMesh.h
+
+commit 6037fe1e4ed67516c605e6f37b57c7dc36c10799
+Author: Joshua Vredevoogd <cleverless@13-165-79.client.wireless.msu.edu>
+Date:   Tue May 10 15:13:02 2011 -0400
+
+    isGamma -> isAlpha in CCell::getDPixyLocal();
+
+commit f83d40ae9d19807c82e9445a10a91d1e67885591
+Author: Scott Pratt <scottepratt@13-161-124.client.wireless.msu.edu>
+Date:   Mon May 9 12:31:18 2011 -0400
+
+    itsy bitsy changes to make life easier for Paul
+
+commit 483e720e48bb9d313120e7298af51c4998a4532c
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri May 6 11:11:40 2011 -0400
+
+    fixed some errors in sourcecalc_HDF5, other minor changes
+
+commit 1e4c7ab2ed10664b056be8e7e2ee0270689daa07
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu May 5 18:14:43 2011 -0400
+
+    small fix to cmesh.h
+
+commit 7876076d9b5b3236b811eb502fbe5ae92657dc5c
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu May 5 12:49:22 2011 -0400
+
+    added nodecays.dat
+
+commit f4a42d87fd2cd55047face296588e1a97a5e45e4
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu May 5 12:48:02 2011 -0400
+
+    added pionsonly.dat
+
+commit 9071ac5d47b3abaabefda1eaefff68efb7970d26
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu May 5 11:03:12 2011 -0400
+
+    added another file
+
+commit 98db7781be2ccfc4b40ccd554add4d1f5981bd1f
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu May 5 11:01:56 2011 -0400
+
+    added mcprlist.c
+
+commit 1830cb7e1ac1b8aa8aedc49463b54decaf459c7a
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu May 5 11:00:35 2011 -0400
+
+    added part.h
+
+commit 5a0d01bdb22938ccf8cfdeb7b440888a4d90bc42
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu May 5 10:44:04 2011 -0400
+
+    small fixes to symmetries
+
+commit 1f0605ff057a9b8e0f91707395cbff2bad56f001
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed May 4 16:42:48 2011 -0400
+
+    innumerable changes, mostly to coral
+
+commit 4d490a938ee39aa824026aa43c6a4b554d923ef1
+Merge: 74433a6 52fc08f
+Author: Joshua Vredevoogd <cleverless@13-165-79.client.wireless.msu.edu>
+Date:   Wed May 4 14:04:56 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 74433a69e356df2cbfccdaf2fd95623998e982de
+Author: Joshua Vredevoogd <cleverless@13-165-79.client.wireless.msu.edu>
+Date:   Wed May 4 14:04:21 2011 -0400
+
+    Allows rescaling of shear viscosity to energy density at low temperature.
+
+commit 52fc08fcb229bd982c0acaa8c274fe7a1a7c8fd3
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue May 3 17:10:19 2011 -0400
+
+    innumerable small changes so that coral can read h5 files, created part.h
+
+commit bf6e7bdc06d1396656c44dd92144d9fe3b51de16
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Tue Apr 26 10:15:54 2011 -0400
+
+    changed include statements in makefile to point to makefile_defs.mk in .../git/ rather then in ../rhic/git/
+    This keeps defs out of git repository where they can be overwritten. It also makes it easier to make madai tarball that is easier to work with. sample_makefile_defs.mk is in .../git/rhic.
+
+commit 192fffb7fc4c49b9a49051c25990470eae98e483
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Apr 21 15:54:40 2011 -0400
+
+    small changes to get pionsonly.dat to work, and fixed code so that it wouldn't bomb for B3D_INELASTIC=false
+
+commit b0e8efd8c0427ea46448f91553e3d85742876cee
+Merge: 4daf88b 7b97755
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Apr 21 10:37:40 2011 -0700
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 4daf88b6049fc61b7715bc78e0e73138b6148566
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Apr 21 10:36:13 2011 -0700
+
+    slight correction to makefile
+
+commit 7b977555dcde27a45ca5ab0e1190cd3e1735238b
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Mon Apr 18 10:06:49 2011 -0400
+
+    Fixed bugs in new parameter map.
+
+commit 5fb26c90010e8c5a58d96f5391062eb9c96bf9ee
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Sun Apr 17 17:16:49 2011 -0400
+
+    GSL matrix stuff
+
+commit d6d2bac802627f2e0a2606923d35881f1903be08
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Fri Apr 1 15:25:49 2011 -0400
+
+    Documentation
+
+commit 195174f56f731d515bf004356548f870d774e223
+Merge: 3bbb5d8 a45aad3
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Mar 31 16:17:44 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 3bbb5d8968267a1044cb2759f7c419e2b79a6109
+Merge: 35a0a4e 7b970fd
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Mar 31 16:17:10 2011 -0400
+
+    removed link to resinfo from repository
+    Merge cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	run/resinfo
+
+commit a45aad3151205b7047941435a7cb8a4ba7a44c84
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Tue Mar 29 16:42:06 2011 -0400
+
+    Documentation, and removing of a few redundant declarations.
+
+commit 2cdc3b43216a7719a924229180c5698a950c110f
+Merge: 9690183 7b970fd
+Author: Joshua Vredevoogd <cleverless@13-160-148.client.wireless.msu.edu>
+Date:   Tue Mar 29 11:50:36 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	isHydro3/src/CHydro.cpp
+
+commit 9690183504be4f5c80d8c6e41c67787ddf60b44b
+Author: Joshua Vredevoogd <cleverless@13-160-148.client.wireless.msu.edu>
+Date:   Tue Mar 29 11:45:44 2011 -0400
+
+    Few memory leak issues.
+
+commit 35a0a4e09ca143508522aa1f1476ae2a7bf55745
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Mon Mar 28 20:02:22 2011 -0400
+
+    changed spectral analysis routine
+
+commit 7b970fd02ac5ddc9e60f13b21d782c5ac5631f26
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Mon Mar 28 16:50:11 2011 -0400
+
+    more documentation, revised installation procedure
+
+commit 69b8e0b73a336ea63453bbee514c19a95caeae0c
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Mon Mar 28 13:01:12 2011 -0400
+
+    added universal makefile
+
+commit 968a87418e827dcfa0c941b63bf894e0c00104b7
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Mon Mar 28 12:11:39 2011 -0400
+
+    Added some documentation, fixed bug in inelastic file.
+
+commit 02293215e607bcd5b70b3d9fb721c3805f2d93ed
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Mar 25 14:47:48 2011 -0400
+
+    saved the world
+
+commit 9429c85b589dcfed97d6db161ac63dec2dd8caa0
+Merge: 056f9b9 2726b9d
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Mar 25 13:42:17 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	b3d/trunk/src/b3d/inelastic.cc
+    	run/resinfo
+
+commit 056f9b93573d9848ab805c02f3091026b1670d84
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Mar 25 11:57:22 2011 -0400
+
+    any changes i made to kevin's beautiful work
+
+commit 97c9b1a35a1581aa55775f10eb08c14238eab7be
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Mar 24 17:46:22 2011 -0400
+
+    changed some stuff with resinfo reading (files can no longer have blank lines)
+
+commit 2726b9d89a510e3e75de4fbabf6470a9ab39afbe
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Thu Mar 24 14:28:06 2011 -0400
+
+    Removed run_kevin
+
+commit d82df7ce3871ee5522e4e5cd0ec33bc708c34a43
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Thu Mar 24 14:27:04 2011 -0400
+
+    Added Documentation and run_kevin directories, documented some B3D headers.
+
+commit a257c9e9f18d50ec3175dc162f9b1aae3dcc12d8
+Merge: a8d4480 45cb65a
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Thu Mar 24 10:59:26 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit a8d448055d8ee2a64eea092597ddfc228c857f98
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Thu Mar 24 10:59:05 2011 -0400
+
+    Added Hungarian Lattice data.
+
+commit d5eea5ff57ed08c4e91468a6bb302ae2f612273c
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Thu Mar 24 10:57:28 2011 -0400
+
+    Changes to EoS to allow bumping and merging to either lattice data format.
+
+commit 45cb65ac20ad0f196f39e4c49a96de7f16e5f36c
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 22 14:23:32 2011 -0400
+
+    small change to header file to get it to work with hpcc compiler
+
+commit d3b8db039a7a7cfac8ba74820d526caad70a92ca
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 22 13:49:53 2011 -0400
+
+    minor edit to makefile for run/
+
+commit 6c91684f5c64e6bdaf4fc604d7ca5740f9763462
+Merge: 0b110b7 0b1217b
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 22 13:48:13 2011 -0400
+
+    merge away
+    Merge cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	isHydro3/makefile
+
+commit 0b110b7ca57cc3ae850633eb892511dfc66cdf26
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 22 13:45:35 2011 -0400
+
+    another correction to makefiles
+
+commit 0b1217b88c4771283bc49c51e6f3f4a19ce176e7
+Author: Joshua Vredevoogd <cleverless@13-160-148.client.wireless.msu.edu>
+Date:   Tue Mar 22 11:52:52 2011 -0400
+
+    Dumb print statement.
+
+commit 691d223846664a7483e77a1f63dc4beb3b9fd506
+Merge: 453f58c ffa0061
+Author: Joshua Vredevoogd <cleverless@13-160-148.client.wireless.msu.edu>
+Date:   Tue Mar 22 11:31:33 2011 -0400
+
+    Makefile and makefile_defs required merging.
+    
+    Conflicts:
+    	isHydro3/makefile
+    	sample_makefile_defs.mk
+
+commit 453f58c7eee008f663e738c1be582b712e3a0f2a
+Author: Joshua Vredevoogd <cleverless@13-160-148.client.wireless.msu.edu>
+Date:   Tue Mar 22 11:28:17 2011 -0400
+
+    Fixed mesh start up boundary issues.
+    Commented preTest.dat.
+    Fixes to makefile.
+
+commit ffa00619e393ed48dab195d218e3f6cfb52cd123
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 22 10:57:03 2011 -0400
+
+    cleaned up SConscript stuff
+
+commit 03b1a195bc1dd50d3b38a7ed43b0803c74a8b017
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 22 10:47:52 2011 -0400
+
+    fixed errors in makefile for ishydro found by josh
+
+commit 2443c89d69bdfc495a8789a78267f10528756ac1
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 22 09:34:34 2011 -0400
+
+    changing makefile_defs to sample_makefile_defs.mk
+
+commit 30d8771ffeedeb1d6f3f01f165ed1faecbfdc5be
+Merge: 59c992b 447532b
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 22 09:23:10 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit a5c64ecbc750c6d42a111d3a7941095fd5879119
+Merge: 1ef8546 447532b
+Author: Joshua Vredevoogd <cleverless@13-160-148.client.wireless.msu.edu>
+Date:   Mon Mar 21 17:48:51 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 59c992b5dec0554869c30c70d0614c83865515bf
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Mon Mar 21 17:43:31 2011 -0400
+
+    fixed errot in ishydro makefile
+
+commit 447532b8253a3c7cb36375f74c84a63b3d2c8244
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Mon Mar 21 16:10:30 2011 -0400
+
+    Minor changes to inelastic routines to remove dependance on run name
+
+commit 1ef8546f90773c7a6231753549ef04a16d73df6d
+Merge: 49532b8 c2d7aca
+Author: Joshua Vredevoogd <cleverless@13-160-148.client.wireless.msu.edu>
+Date:   Mon Mar 21 15:40:20 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 49532b8def028db0b0d446d67220f9b457d1a764
+Author: Joshua Vredevoogd <cleverless@13-160-148.client.wireless.msu.edu>
+Date:   Mon Mar 21 15:39:24 2011 -0400
+
+    Mesh boundary handling changed slightly - busted at the moment.
+
+commit c2d7acade0b20704d78ee981330477f82aaa6235
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Mar 21 15:36:04 2011 -0400
+
+    final changes to makefile for ishydro3,
+
+commit 79893806a37ee34dc15a5344620671315dfa2fb0
+Merge: c3ac698 014856a
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Mar 21 14:24:09 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit c3ac698dbe9b4faa61ae9e126bd0f5c6cf4ff7aa
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Mar 21 14:23:51 2011 -0400
+
+    new include file for makefile
+
+commit 4ed340b8c01f0f179e278e02c1505102d206081a
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Mar 21 14:21:53 2011 -0400
+
+    more more more
+
+commit 014856af505fe1b0567ef06226773fb0893ceaf6
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Mon Mar 21 14:16:28 2011 -0400
+
+    suppressed data writeout to PiBCollide.dat and PiBSquared.dat, as it is no longer needed.
+
+commit 6c3b337d5545790082504b4708360fb6d0546fe9
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Mar 20 17:31:12 2011 -0400
+
+    big changes to makefile for ishydro
+
+commit 7921b7f0fe5514a58eaa4bf0ef9979da2a65af6d
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sat Mar 19 16:25:16 2011 -0400
+
+    slight edit
+
+commit 69d4a1312421d0fe53ccb90bee7d0590cfcbd556
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sat Mar 19 16:23:41 2011 -0400
+
+    one last fix to makefile -- hopefully
+
+commit 34b5ebbb2654a3bc80ef98cb2bf7fd15d0050d88
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sat Mar 19 16:20:44 2011 -0400
+
+    fixing some makefile stuff
+
+commit fb3994badeb950bb6c48db47a25bc928c326357a
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sat Mar 19 14:13:49 2011 -0400
+
+    more changes to makefile
+
+commit d65e0af61bf9ba7f21cffd7d7025a6d99ad8f939
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sat Mar 19 13:44:03 2011 -0400
+
+    Major changes to makefile -- much work
+
+commit 9743600ea9559eac9d3eaf9a4b3c7979aad6ed72
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Mar 18 17:29:37 2011 -0400
+
+    major changes to makefile
+
+commit 354f9aa3287a0f4be84f28a45f74d09cf3f3437e
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Mar 18 13:33:10 2011 -0400
+
+    adding directory making to CorAL makefiles
+
+commit a14fa798cd5bc50e6903f085a2fb3c05cd032df7
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Mar 18 13:28:45 2011 -0400
+
+    fixing makefile to create missing directories
+
+commit 1b5c13bd3356bd7923ca366b4b52987c05d7338e
+Merge: b493c66 dca08fd
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Wed Mar 16 14:33:15 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit b493c66d5e78c8fa0ab753d84e7d953f44a27b5e
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Wed Mar 16 14:32:55 2011 -0400
+
+    fixed ordering of thermal array, added comments. Minor fix to reading in inelastic data. Added a new resonances file, including G parity values.
+
+commit dca08fd12dc5b5d85c6a474355508de9bddd36ea
+Author: Joshua Vredevoogd <cleverless@13-163-150.client.wireless.msu.edu>
+Date:   Tue Mar 15 17:16:17 2011 -0400
+
+    Resolved more revert clobbering changes.
+
+commit a50c7461025bdae544665593bfc31fc71cce2e3a
+Author: Joshua Vredevoogd <cleverless@13-163-150.client.wireless.msu.edu>
+Date:   Tue Mar 15 16:36:06 2011 -0400
+
+    Added runHydro.cpp - excluded for no reason....
+
+commit ca7b50e80ca8effaa4ae509c1a30dab99c73a4e2
+Merge: 7d1d709 e85defa
+Author: Joshua Vredevoogd <cleverless@13-163-150.client.wireless.msu.edu>
+Date:   Tue Mar 15 16:33:05 2011 -0400
+
+    Putting it back.
+    
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	isHydro3/fixed.param
+    	isHydro3/stats.param
+
+commit 7d1d709d3e94366ecedc0eb5b0ea1d4fcd31c19b
+Author: Joshua Vredevoogd <cleverless@13-163-150.client.wireless.msu.edu>
+Date:   Tue Mar 15 16:19:33 2011 -0400
+
+    little or no changes
+
+commit e85defa879b6a3d014f667bd0a1d840d0149572b
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 15 15:55:43 2011 -0400
+
+    again added changes for makefiles
+
+commit c9b1d97f249c2a22e208b24fbb2344921e07f320
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 15 15:23:39 2011 -0400
+
+    added what was lost -- hopefully
+    Revert "trying to fix crap"
+    
+    This reverts commit 2dc30e56b0b2117d35b33dec10d74bbeb00fc780.
+
+commit 892fb08a2f9e059b1abf3eb4a6b42b93db6d744b
+Merge: 22142ed f84adb0
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 15 15:10:38 2011 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 22142edaef559f55a43a48fa768e9c13e1da8fef
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 15 15:01:30 2011 -0400
+
+    good luck
+    Revert "trying to fix crap"
+    
+    This reverts commit 2dc30e56b0b2117d35b33dec10d74bbeb00fc780.
+
+commit 2dc30e56b0b2117d35b33dec10d74bbeb00fc780
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 15 14:57:44 2011 -0400
+
+    trying to fix crap
+
+commit f84adb028ba2e7a34c1acff7eccbddcabf3cd932
+Merge: 316b68f 0db2cda
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Tue Mar 15 14:33:35 2011 -0400
+
+    farting-around
+
+commit 316b68f87395bc2428a622be1f87aab2ffc95a33
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Tue Mar 15 14:26:21 2011 -0400
+
+    blah
+
+commit 0db2cda144943465b698ab2c2d7f92782e370539
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 15 14:24:28 2011 -0400
+
+    major improvement of makefiles for b3d and analyze
+
+commit 7db86392f047e5098fad7ef52d05a169ac018d73
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Mar 15 13:07:13 2011 -0400
+
+    small changes
+
+commit 1cba642a74ad861f800790c226b34d6685dc2bb7
+Merge: 4cdbe1d 65b7599
+Author: Joshua Vredevoogd <cleverless@13-163-150.client.wireless.msu.edu>
+Date:   Tue Mar 15 12:36:57 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 4cdbe1d7bf5825b7031502451866e671ea6db888
+Author: Joshua Vredevoogd <cleverless@13-163-150.client.wireless.msu.edu>
+Date:   Tue Mar 15 12:36:17 2011 -0400
+
+    Fixed symmetry issues.
+    
+    Revert "runHydro.cpp was clone of multiEos.cpp"
+    
+    This reverts commit 4cd2d5139ab9c4e83b78f3b274cc17170360e149.
+    
+    Conflicts:
+    
+    	isHydro3/runHydro.cpp
+
+commit 65b75992056032354e63ab673e242113848749d8
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Tue Mar 15 12:31:38 2011 -0400
+
+    commented out a few debugging lines
+
+commit 1b2045d0ee0d4f118e082c25e226530208c4e75d
+Merge: e2ecbbe dcd8b63
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Tue Mar 15 11:13:51 2011 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit e2ecbbe9190d288b55b45d19ddd4c2c09932bd3c
+Merge: 2526a00 b4f37d8
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Tue Mar 15 11:08:50 2011 -0400
+
+    Merge branch 'test'
+
+commit b4f37d8fb68665ddff717298a3d2d9e3b6430703
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Tue Mar 15 11:08:33 2011 -0400
+
+    final changes
+
+commit dcd8b63a3389bac2f058563d504de43e9dcfd1ec
+Author: Joshua Vredevoogd <cleverless@13-163-150.client.wireless.msu.edu>
+Date:   Tue Mar 15 11:06:49 2011 -0400
+
+    Numbered version of hydro code.
+
+commit 45c90b221d11ae6a3167f1e489c64e4afe5033b4
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Thu Feb 24 15:54:08 2011 -0500
+
+    added resinfo link
+
+commit 8a5b7e460818ced78dde2144487a25ddf75b6ea1
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Thu Feb 24 15:46:36 2011 -0500
+
+    fixed?
+
+commit feb9f2ad01eae76af7fb6707e3e4c0bb20ddc442
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Thu Feb 24 15:41:23 2011 -0500
+
+    accidently deleted run folder
+
+commit 2526a005799d9940141b73902ef71268fc934896
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Thu Feb 17 17:14:28 2011 -0500
+
+    added verbose issues
+
+commit 0e50514d900d28f9b99e71ea2a769e1171becd47
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Thu Feb 17 16:50:27 2011 -0500
+
+    test update, branch switching
+
+commit 103a2f54b59213b53be5545689292a9b8f972c1b
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Thu Feb 17 15:44:51 2011 -0500
+
+    committing to switch branches
+
+commit 120192e59cf058a6d37089e750aa73386fd2a1db
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Thu Feb 17 14:25:55 2011 -0500
+
+    Updating changed files
+
+commit c9f382030ca72f66eda2637cef29a9e5c91349e4
+Merge: ae607dd 4cd2d51
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Thu Feb 17 14:14:59 2011 -0500
+
+    Merge cvs.cs.unc.edu:MADAI/rhic into test
+
+commit ae607ddf2619c7449fdbaf3ec887f1226a74aab3
+Author: Kevin Novak <kevin.m.novak@gmail.com>
+Date:   Tue Feb 15 13:59:12 2011 -0500
+
+    Various minor tweaks and updates to code, added in working L values for scattering cross sections and added to new datafile. Inelastic resonances in the process of being implemented.
+
+commit 4cd2d5139ab9c4e83b78f3b274cc17170360e149
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Sun Jan 30 16:53:39 2011 -0500
+
+    runHydro.cpp was clone of multiEos.cpp
+
+commit eb46c12a937fa5dee800c833c107de94bafb6559
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Sun Jan 30 16:48:33 2011 -0500
+
+    Correct code for adding bumps to EOS.  Should be no changes to parmaker.
+
+commit ced3804deacef7d99e7776560fb1e9873bf8aa82
+Author: Joshua Vredevoogd <cleverless@13-161-149.client.wireless.msu.edu>
+Date:   Mon Jan 24 17:24:04 2011 -0500
+
+    Including the bump file.
+
+commit 4c2289173cb5d9682b1c1f415fed81fc8e8372f3
+Author: Joshua Vredevoogd <cleverless@13-161-149.client.wireless.msu.edu>
+Date:   Mon Jan 24 17:22:52 2011 -0500
+
+    Added initial support for adding bumps to eos.
+
+commit f2bdca8e4dbed8f0841e7731d781de2b0b32fdf3
+Author: Joshua Vredevoogd <cleverless@13-161-169.client.wireless.msu.edu>
+Date:   Fri Jan 14 15:39:18 2011 -0500
+
+    Fixed file issues preventing random dumps for certain IO parameter settings.
+
+commit 4afc62b4a144b745e5320c22ff4a5eda1688d1c1
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Jan 10 16:17:41 2011 -0500
+
+    new file for checking cross sections
+
+commit 8474697dd2abd9bb3bfb716c7eeaf5ca47ec99ec
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Jan 2 17:40:53 2011 -0500
+
+    addding pcamain.cc
+
+commit 6f14770dd79d508024a6c6ff0079a9d458a8ef91
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Jan 2 17:40:00 2011 -0500
+
+    fixing pca stuff
+
+commit 585d83f41754652599b4ae633a0236cdd636c5bf
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 29 16:35:00 2010 -0500
+
+    all is well that ends well
+
+commit 79ed83ae205c47cac27fd135c6b983799a6f4f4c
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 29 16:26:07 2010 -0500
+
+    still testing
+
+commit b453cd46e109a9548d5b87497a71f802065e8d7c
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 29 16:24:51 2010 -0500
+
+    testing still
+
+commit 726a8cfa37c16ec3cd673066d2cebf0af40fb5b9
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 29 16:23:11 2010 -0500
+
+    testing
+
+commit 4a436ad3f58586b7ccabb3c17794c77308d1388b
+Author: Scott Pratt <scottepratt@mo.pa.msu.edu>
+Date:   Wed Dec 29 16:13:18 2010 -0500
+
+    worked on scripts
+
+commit cc539d4ffb8e39a006a9d55bb504cd4aeeba0351
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 29 11:23:03 2010 -0500
+
+    pca codes almost ready
+
+commit 8f6e75a56299ced5911563b79b4101da1dc7dfff
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Mon Dec 27 16:57:23 2010 -0500
+
+    analyze ready to go
+
+commit ea546f1a5b090d3d6f59c747ae14d2eb4cbe0f87
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 22 03:32:50 2010 -0500
+
+    small changes to analyzemain.cc
+
+commit 3d39fb5e3eeae54d2b2472587d3353d085279de2
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Tue Dec 21 20:22:15 2010 -0500
+
+    fixed hbt stuff
+
+commit 5f343423b92f6d6548299e2c7951ee739e82f3cd
+Author: Scott Edward Pratt <prattsc@dev-amd09.i>
+Date:   Mon Dec 13 22:28:24 2010 -0500
+
+    small changes
+
+commit d0c95327aaa8e1a051c2d87770116ab98e1c7370
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Mon Dec 13 22:20:13 2010 -0500
+
+    fixed getlambdafact
+
+commit 86bee13d9ee512484742ee429d822e86c0d87237
+Merge: 09ca5a8 09133f0
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Mon Dec 13 22:13:30 2010 -0500
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 09133f0e541fcc06ebcaba812e13ce772a75af85
+Author: Scott Edward Pratt <prattsc@dev-amd09.i>
+Date:   Mon Dec 13 22:12:25 2010 -0500
+
+    fixed shell scripts
+
+commit 09ca5a82470c3d6332c09afb4bdf3d9d01cd9533
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Mon Dec 13 22:12:02 2010 -0500
+
+    fixed counting
+
+commit e39dd4a26c71258740278968fb145961ab4817b1
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Dec 13 15:52:29 2010 -0500
+
+    added PBS shell scripts
+
+commit 0f67971baeb61211a5478af151b9463d8dd4d136
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Dec 13 13:25:54 2010 -0500
+
+    fixed memory leaks
+
+commit 437e491a198dada831cee8c3dca848723012def9
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 19:35:19 2010 -0500
+
+    oops
+
+commit 611f112f3d82ba26b770a0d5de73b3ab53f9ccd1
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 19:33:02 2010 -0500
+
+    about to give up
+
+commit 59c902614be77eb4519c004ef0f23302e3f1a2f9
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 19:29:55 2010 -0500
+
+    still trying
+
+commit 5dfa6625d11d245a9b4a582df947f412e07c195c
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 19:25:56 2010 -0500
+
+    more random tries
+
+commit c1cb11246492eadd805c2c603f1d2a99deb69660
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 19:14:06 2010 -0500
+
+    still trying
+
+commit 52ab8b0a918f74b76ef77b35f163a73b30184fb4
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 19:10:09 2010 -0500
+
+    still searching
+
+commit 91a6b6124d5901d69052e52139b1425ce77fc0e5
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 19:08:38 2010 -0500
+
+    try try try
+
+commit 016a928084ddc8d90a38f3662eeaf7053d778db9
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 17:48:20 2010 -0500
+
+    random guess
+
+commit bdd18d2d5f95b5e2272da42d4e87af6ea2f941bb
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 17:45:59 2010 -0500
+
+    onward
+
+commit 239e0450b5347dfafffd3b3becbb80c4ab496d46
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 17:43:03 2010 -0500
+
+    still trying
+
+commit 80c3f411cf151acb9b55f080c1e8e01d7aa0e62c
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 17:39:38 2010 -0500
+
+    try again
+
+commit 085ba43c357ae502facf69c7334afd3018cba15a
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 17:38:45 2010 -0500
+
+    more tries
+
+commit 2dc72ace7bed6d2b95897a9057c7a6debee81245
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 17:36:20 2010 -0500
+
+    trying to fix icc problem
+
+commit f8e52e10328f8fbcc57af3bc19d030a93aad4d6e
+Author: Scott Edward Pratt <prattsc@dev-amd09.i>
+Date:   Sun Dec 12 14:45:33 2010 -0500
+
+    minor changes
+
+commit fe1118d904c1a388a460d9a923e4778fd6966a66
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 14:31:09 2010 -0500
+
+    added -lgslcblas to makefile
+
+commit c2c7949fb3a39226a370d75452311f78f1b9aba8
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 14:19:48 2010 -0500
+
+    tring to fix weird icc bug
+
+commit 60da562afdc42cdd88d1adb41a627fdd743bd636
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 12:51:52 2010 -0500
+
+    finished virtual fixes to icc warnings
+
+commit 8f47dda063e9d2661e31f4a39218fec3f62f7459
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 12:39:14 2010 -0500
+
+    fixed -O in makefile
+
+commit 28157d0477a5c37b13fcd6d22a3e7efc93d479aa
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Dec 12 12:38:00 2010 -0500
+
+    fixing warning stuff for icc compilers
+
+commit adbe0001ba79b3cea6f74711b645c11ebb1d5f2b
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Fri Dec 10 14:51:08 2010 -0500
+
+    bomb defused
+
+commit ffa70e322770fccb5d14df41d726d3c493b188da
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Dec 10 07:25:36 2010 -0500
+
+    basically checking
+
+commit 1e6d8035a028ea865fc071c7918c4675f7591496
+Merge: 7f07091 232f257
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Dec 9 22:24:17 2010 -0500
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 7f0709160d99f192b1604a48b7888768432aa25b
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Dec 9 22:21:41 2010 -0500
+
+    just making sure
+
+commit 232f2571122daa0812b1b91bc44f0134e0a971cb
+Author: Joshua Vredevoogd <cleverless@13-167-188.client.wireless.msu.edu>
+Date:   Thu Dec 9 15:50:53 2010 -0500
+
+    undo of hydromain change
+
+commit bb65959de2152b3b2c4fcabac84368181be9a4aa
+Author: Joshua Vredevoogd <cleverless@13-167-188.client.wireless.msu.edu>
+Date:   Thu Dec 9 15:49:39 2010 -0500
+
+    Regulated initial element of shear by pressure.
+
+commit eda21c0e1add048b7b86fd066e9c195aafb059f4
+Merge: 9e7b25c 679cbd1
+Author: Joshua Vredevoogd <cleverless@13-167-188.client.wireless.msu.edu>
+Date:   Thu Dec 9 13:09:09 2010 -0500
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 9e7b25c0cc167d2401a124dfc8cf0c8e2a7b380a
+Author: Joshua Vredevoogd <cleverless@13-167-188.client.wireless.msu.edu>
+Date:   Thu Dec 9 13:06:47 2010 -0500
+
+    Fixed mesh pointer problems for dynamic mesh shapes.
+    File management issues for slices+full exist, but bare-bones HYDRO_IO_OSCARHYPER=true works.
+    Full run for INIT_NS=0.25, INIT_FLOW=0.5, SVRATIO=0.08.
+    Instability type crash for INIT_NS=0.5, INIT_FLOW=0.5, SVRATIO=0.1.
+
+commit 679cbd1cde681065da1ecd9ca3a230fa14c8944f
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Dec 9 03:49:28 2010 -0500
+
+    added resinfo stuff
+
+commit 146f4ae67e8f8bb8c967b017230fc6b23e15eaae
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Wed Dec 8 17:12:03 2010 -0500
+
+    numerous additions for running
+
+commit d3d75fcc456f225e8e846d204196f7dab3ecde60
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Wed Dec 8 16:59:40 2010 -0500
+
+    several small fixes, good to go with anal_spectra
+
+commit b081e5f8cc47a0da96fe3b7fa8731ee75b580759
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 8 05:56:54 2010 -0500
+
+    fixed makefile
+
+commit 5d4e997c917072b7d31a7b005e500d718bc7051a
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 8 05:50:27 2010 -0500
+
+    added makefile, which installs qualifier.h and parmaker.cc
+
+commit d37af70f6533bdbb62fa893df0eed22ed0dcc36e
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 8 05:45:09 2010 -0500
+
+    minor changes
+
+commit c6a7084551f10dcddeac99b4c905b12f06574ac5
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 8 05:42:09 2010 -0500
+
+    bmaker calculates impact parameters
+    qualifier.h reads qualifiers.dat (impact parameters, beam energies...)
+
+commit b868b0415eb287f2ce56033aa1bed1e046cc79b1
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Tue Dec 7 17:03:22 2010 -0500
+
+    Merged with local version. Includes non-square meshes.
+
+commit 42714a1cbdd75162fb45cae03f46a43a62976948
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Tue Dec 7 16:33:45 2010 -0500
+
+    fixed calcDerivs()
+
+commit dfaeb5ced9f8403b7f58b5a24db8596c0ed3330e
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Tue Dec 7 13:52:37 2010 -0500
+
+    Still trying to fix merge problems...
+
+commit 12c43a4d2321e048a998806a8716e72c368f510f
+Merge: 2cd0da8 5cb2100
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Tue Dec 7 13:17:13 2010 -0500
+
+    Merge branch 'exp' into mergeTest
+    
+    Conflicts:
+    	isHydro3/CCell.cpp
+    	isHydro3/CCell.h
+    	isHydro3/CHydro.cpp
+    	isHydro3/CMesh.cpp
+
+commit 2cd0da815bb24b5f12ce95d71eea88a193a2b686
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Tue Dec 7 13:07:40 2010 -0500
+
+    Revert "merging local changes"
+    
+    This reverts commit 231c78eb7b46972d84a2b06d216b743da897682e.
+
+commit 47e806229345283ba13b89afd6f3d2c783ef5cf0
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Tue Dec 7 13:03:49 2010 -0500
+
+    Revert "added eos data"
+    
+    This reverts commit 856c78808700c48895c248bf826c8b3f2044f0a7.
+
+commit 5cb2100fd2f2d2c91740b96d832f43433c96ff5f
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Tue Dec 7 12:53:08 2010 -0500
+
+    Revert "initial condition problems..."
+    
+    This reverts commit f920104c21846d24999f3acd085d075e3bc2a800.
+    
+    Conflicts:
+    
+    	isHydro3/CCell.cpp
+    	isHydro3/CCell.h
+    	isHydro3/CHydro.cpp
+    	isHydro3/CMesh.cpp
+
+commit 231c78eb7b46972d84a2b06d216b743da897682e
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Tue Dec 7 09:31:11 2010 -0500
+
+    merging local changes
+
+commit f920104c21846d24999f3acd085d075e3bc2a800
+Author: Joshua Vredevoogd <cleverless@joshua-vredevoogds-macbook-pro.local>
+Date:   Tue Dec 7 09:24:43 2010 -0500
+
+    initial condition problems...
+
+commit 856c78808700c48895c248bf826c8b3f2044f0a7
+Author: Joshua Vredevoogd <cleverless@13-167-188.client.wireless.msu.edu>
+Date:   Fri Dec 3 13:51:36 2010 -0500
+
+    added eos data
+
+commit 14269e7204b348242651a2fec10c2b3ed91a1a32
+Merge: 164ec2f d3edd78
+Author: Joshua Vredevoogd <cleverless@13-167-188.client.wireless.msu.edu>
+Date:   Fri Dec 3 11:52:23 2010 -0500
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	run/hydromain.cc
+
+commit 164ec2f3d26722fc5e81d58a84a3f9fc3a856b5f
+Author: Joshua Vredevoogd <cleverless@13-167-188.client.wireless.msu.edu>
+Date:   Fri Dec 3 11:50:57 2010 -0500
+
+    file management fixes
+
+commit d3edd78894eb6c5bc45cd2e4d1331aef853cc2f9
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Dec 3 10:23:28 2010 -0500
+
+    adding a few files to repository
+
+commit 0edd598828881a2394c109a014abec6575a29c79
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Dec 3 10:19:29 2010 -0500
+
+    adding a directory
+
+commit 634ddece53704cad9fbc8c43e9156659c1188bd2
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Dec 3 10:16:41 2010 -0500
+
+    cleaning up
+
+commit 756cea06dd2789a2ad1c4e04f44afb70656f8586
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Dec 3 10:13:01 2010 -0500
+
+    Adding coral files
+
+commit 0225f380abcfb168d3a1b722b4426ccd9b4d1025
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Dec 2 13:26:27 2010 -0500
+
+    fixed extra - sign in makefile
+
+commit 1798cc2d3f8fb5d3324bd65e12e524814673bbe6
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Dec 2 13:23:01 2010 -0500
+
+    fixed / in directory names in makefile
+
+commit faf02f9f6de117bb4e02df30e6e17aa4a2402ec3
+Merge: 91b010c 8dd1bde
+Author: Joshua Vredevoogd <cleverless@13-167-188.client.wireless.msu.edu>
+Date:   Thu Dec 2 10:21:56 2010 -0500
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 91b010cef16d223e36517cd7c129d21af9184e7b
+Author: Joshua Vredevoogd <cleverless@13-167-188.client.wireless.msu.edu>
+Date:   Thu Dec 2 10:21:34 2010 -0500
+
+    summing over impact parameters with hydromain.cpp
+
+commit 8dd1bde4e1bdda55fc9d8fadecafa5cbcad7f26d
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 1 17:05:56 2010 -0500
+
+    readding several files which were mistakenly erased
+
+commit 0391257d206a9b42f5deacb9062f54bf5fc4feb6
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 1 13:42:48 2010 -0500
+
+    adding back part.cc
+
+commit f6c05744edaa357ebf989c993b2d0b6d642e54b1
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 1 13:40:12 2010 -0500
+
+    adding back findcollisions.cc
+
+commit 492d3ef81d325b99814c1a90085e65397c80f854
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 1 13:39:38 2010 -0500
+
+    adding cell.cc back in
+
+commit 164e5a7ffb5d240735c6c83797de49d0a12be24c
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 1 13:36:11 2010 -0500
+
+    adding bjmaker.h
+
+commit 1ae258d288362c283c37c0a3663b1e1aa9174da3
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 1 12:24:49 2010 -0500
+
+    work in progress
+
+commit 07ea9ab620e94347837cbcb32ef1f11d5cb11035
+Author: Joshua Vredevoogd <cleverless@13-167-188.client.wireless.msu.edu>
+Date:   Wed Dec 1 11:20:38 2010 -0500
+
+    trying to get up to date
+
+commit 9cc3b7093b4834b8ed3cd11dac2349ee5ca49a5c
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 1 09:59:35 2010 -0500
+
+    many changes with josh
+
+commit a0518c6066010a00736ad5cac4277929a926aff9
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Wed Dec 1 09:03:23 2010 -0500
+
+    Adding latin hyper cubed stuff for first time
+
+commit d2223837c6afb41999251eafd61e7d864e2d4cd0
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Mon Nov 15 22:40:59 2010 -0500
+
+    big changes to makefile
+
+commit c53381933cc25920d0fa86a8d1c73a0e2089e051
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Nov 14 01:14:11 2010 -0500
+
+    changed event->action in makefile
+
+commit e7cf6f385f799fdc529c993e55ba7beab2f6b84b
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Nov 14 01:13:16 2010 -0500
+
+    changed name of files (event -> action)
+
+commit d74be5fa5dd44edf5e348e8d0da4b7b8d4eb9bdc
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Nov 14 01:10:08 2010 -0500
+
+    added vizwrite file
+
+commit 86945210f1255be313e3c5e9adf98b8a2083f965
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Nov 14 01:09:29 2010 -0500
+
+    added ability to write viz files
+
+commit ce40b6baad837dc590c070a9b9dd9fa2242ff5a4
+Merge: 66b98f7 bdabf6b
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Fri Nov 5 18:59:01 2010 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 66b98f7e7c0d0fc4c97cc58fa7be5f37f8a0c0a3
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Fri Nov 5 18:58:03 2010 -0400
+
+    main change was that 4-body decays were added, 3-body decay phase space weights were fixed
+
+commit bdabf6b0ceb196dd3ce68c70415ee1f3c9ba06e4
+Merge: dbd3629 03ade79
+Author: Joshua Vredevoogd <cleverless@13-167-167.client.wireless.msu.edu>
+Date:   Tue Oct 26 11:23:08 2010 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit dbd3629876c3f8c2c038aa48cb9a80375ed525f3
+Author: Joshua Vredevoogd <cleverless@13-167-167.client.wireless.msu.edu>
+Date:   Tue Oct 26 11:22:03 2010 -0400
+
+    Added Eos functionality to merge arbitrary HRG with Lattice data through entropy smooting procedure.
+
+commit 03ade79f9972ac840b707136964b366d41adf719
+Author: Scott Pratt <scottepratt@dhcp184-49-90-65.mra.atl.wayport.net>
+Date:   Sun Oct 24 10:48:01 2010 -0400
+
+    added ability to analyze v2
+
+commit 5ce93eddd670349bc9670d31df3403c1468a6c8c
+Author: Joshua Vredevoogd <cleverless@13-178-76.client.wireless.msu.edu>
+Date:   Tue Oct 19 11:06:18 2010 -0400
+
+    little
+
+commit ffd5edefa3d817c2df8ee11710c354c0e9c40cf3
+Author: Joshua Vredevoogd <cleverless@13-178-76.client.wireless.msu.edu>
+Date:   Tue Oct 19 11:04:37 2010 -0400
+
+    rename!
+
+commit fd16bfd5e746ffc5e61d303de424391fcde2bc3a
+Author: Joshua Vredevoogd <cleverless@13-178-76.client.wireless.msu.edu>
+Date:   Tue Oct 19 10:59:52 2010 -0400
+
+    sadlf;k
+
+commit 71dc81f064e83459fb916271ac04cf58ecf25118
+Author: Joshua Vredevoogd <cleverless@13-178-76.client.wireless.msu.edu>
+Date:   Tue Oct 19 10:57:31 2010 -0400
+
+    more makefile bs
+
+commit a987a17a7979f2bcb5fbe386fa7d9c8a9b94761b
+Author: Joshua Vredevoogd <cleverless@13-178-76.client.wireless.msu.edu>
+Date:   Tue Oct 19 10:34:39 2010 -0400
+
+    little makefile changes
+
+commit be8c47e7d63db0357932d3727b2705c7301fc866
+Author: Joshua Vredevoogd <cleverless@Crazy-Legs.local>
+Date:   Tue Oct 19 00:43:32 2010 -0400
+
+    cosmetic...
+
+commit e12efed29f083dd33c5d13971849885050544e29
+Merge: 84c4b03 f084316
+Author: Joshua Vredevoogd <cleverless@Crazy-Legs.local>
+Date:   Tue Oct 19 00:14:27 2010 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 84c4b03009360a7cc12dfbd4aec68cd8fa72ecd2
+Author: Joshua Vredevoogd <cleverless@Crazy-Legs.local>
+Date:   Tue Oct 19 00:07:55 2010 -0400
+
+    Made isHydro3 library.
+
+commit f0843160ad4b7666babfc410d9fb81e7f2e0c6d2
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Oct 18 17:42:04 2010 -0400
+
+    fixed makefile
+
+commit 5e4fd7aaa81141936877e4d8bba1240120836d7e
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Oct 18 17:19:05 2010 -0400
+
+    fixed it hopefully
+
+commit 87c75385feaa2280b053b96644b7de4c63690e07
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Oct 18 17:09:18 2010 -0400
+
+    tyring
+
+commit 000df38cd5ab265be6fcee34247816e25accd12f
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Oct 18 16:53:20 2010 -0400
+
+    still trying
+
+commit baa6f4f8bf64901413bcbd1a8987ed14e8db45e6
+Merge: 6e4c61a 46f911c
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Oct 18 16:50:01 2010 -0400
+
+    trying to fix conflict
+    Merge cvs.cs.unc.edu:MADAI/rhic
+    
+    Conflicts:
+    	CorAL/trunk/src/coralutils/ParameterMap/parametermap.cc
+    	isHydro3/makefile
+
+commit 6e4c61a2641eeb9484f8daa393d12203647954c9
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Mon Oct 18 10:10:02 2010 -0400
+
+    small changes to parmap to fix problems with bool
+
+commit 46f911ce44427f0f5d6c3487a1669fb2796c2277
+Author: Joshua Vredevoogd <cleverless@Crazy-Legs.local>
+Date:   Sun Oct 17 23:30:37 2010 -0400
+
+    Fixed bools in parameterMap.
+
+commit d6cf3f374fab5533c4af30c1595397f594c59bdc
+Merge: 05e7581 e6ea143
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Oct 17 19:01:12 2010 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit e6ea1432f0a9c12ddd94d7a8cc86a287556f9308
+Merge: 6894ac7 0ff17e3
+Author: Joshua Vredevoogd <cleverless@Crazy-Legs.local>
+Date:   Sun Oct 17 12:55:12 2010 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 05e7581b193f7380b671ddf52adde06cd15658b0
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Oct 17 11:17:45 2010 -0400
+
+    split cc files
+
+commit 0ff17e3f0f8a8f07b33a4bea7a6150def947fd17
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Sun Oct 17 11:16:36 2010 -0400
+
+    split up analyze routines into separate files
+
+commit da77558af670c8e8fed0efedb9442928862583e2
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Fri Oct 15 13:30:42 2010 -0400
+
+    removed sconstruct
+
+commit 018873e8c451dbc7d04b2a8cb72989b839ee37f8
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Oct 14 23:34:55 2010 -0400
+
+    Adding directory run
+
+commit dc835a98a1b88a2ce645a885696fb56139663b0e
+Merge: a5dfd90 4960c5d
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Oct 14 23:33:14 2010 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit a5dfd90333d62419cef7bccadf16620c1f4ca063
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Oct 14 23:32:50 2010 -0400
+
+    changing lib and include setup
+
+commit 4960c5d9b6501cd8bd43f0ffb2a11592730410dc
+Merge: db72183 c2bb510
+Author: Scott Edward Pratt <prattsc@gateway.(none)>
+Date:   Thu Oct 14 23:29:53 2010 -0400
+
+    Merge branch 'master' of cvs.cs.unc.edu:MADAI/rhic
+
+commit 6894ac70faba49324581ee007ff98991420ff641
+Author: Joshua Vredevoogd <cleverless@13-167-167.client.wireless.msu.edu>
+Date:   Thu Oct 14 15:16:05 2010 -0400
+
+    More general compiling - icc compatibility.
+
+commit db72183120260942300f618df3233310d203fe23
+Author: Scott Edward Pratt <prattsc@gateway.(none)>
+Date:   Thu Oct 14 10:15:58 2010 -0400
+
+    small change, just to check git
+
+commit c2bb51094e0627cf8b998a0d887f070b11d61ad5
+Merge: 1b190df 96ca9b3
+Author: Joshua Vredevoogd <cleverless@13-165-61.client.wireless.msu.edu>
+Date:   Wed Oct 6 11:57:47 2010 -0400
+
+    Merge cvs.cs.unc.edu:MADAI/rhic
+
+commit 1b190df7a89fbd135d4530aa62970cbe4bfa846a
+Author: Joshua Vredevoogd <cleverless@13-165-61.client.wireless.msu.edu>
+Date:   Wed Oct 6 11:41:57 2010 -0400
+
+    first commit
+
+commit 96ca9b37afe82d5aac5842bc3212059e25fc3fa4
+Author: Scott Edward Pratt <prattsc@dev-amd09.i>
+Date:   Sat Oct 2 17:57:41 2010 -0400
+
+    all is well
+
+commit e6ee36a3148857fcbd83cc171f7afb8ce2f7082b
+Author: Scott Edward Pratt <prattsc@dev-amd09.i>
+Date:   Sat Oct 2 16:39:50 2010 -0400
+
+     fixe
+    d problem with having added .o files by mistake. Please enter the commit message for your changes. Lines starting
+
+commit 52a03900a76ddc2b4cd1ddbca514786d6dfb1be3
+Author: Scott Edward Pratt <prattsc@dev-amd09.i>
+Date:   Sat Oct 2 16:22:34 2010 -0400
+
+    several fixes to get to compile with icc
+
+commit 0f41e0590f6b44cca839256a17d199ec591cd240
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Fri Oct 1 17:29:41 2010 -0400
+
+    fixed env variables for makefile
+
+commit 20a7383ef0328abe1cc9dd6b6bae49df0093bb34
+Author: Scott Pratt <scottepratt@prattsc-3.user.msu.edu>
+Date:   Fri Oct 1 17:23:45 2010 -0400
+
+    added makefile to b3d
+
+commit 9c88fb5e64e732409b95e3887d869b37d8650c46
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Fri Oct 1 05:00:21 2010 -0400
+
+    makefile now working
+
+commit 6c9ff27e413d40ad80e44095168c775a0ecdba45
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Thu Sep 30 19:39:52 2010 -0400
+
+    trying to make makefiles
+
+commit 8a920ba432c8e75daef8ba6ee10429fceea31d1b
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Mon Sep 27 19:13:31 2010 -0400
+
+    fixed SConstruct
+
+commit c3978e62816ba1038f7daa741215bcd996bf09e0
+Author: Scott Pratt <scottepratt@mo.pa.msu.edu>
+Date:   Mon Sep 27 18:51:53 2010 -0400
+
+    got rid of oscarmaker
+
+commit a44a8bb056628ffa098f3c1a392ffdcf00245d8f
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Mon Sep 27 18:48:56 2010 -0400
+
+    first commit of b3d
+
+commit eff49bc02193cd3cc18d3c877b996a63fb0ea67c
+Author: Scott Pratt <scottepratt@larry-2.local>
+Date:   Mon Sep 27 18:39:19 2010 -0400
+
+    he goes nothing
+
+commit 1b302627d401e460c393ebcebaf24f17edeef767
+Author: Xunlei Wu <xunlei@renci.org>
+Date:   Fri Jul 9 12:01:33 2010 -0400
+
+    Initial comment, module rhic

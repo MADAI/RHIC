@@ -1,0 +1,3 @@
+set( coral_INCLUDE_DIRS @coral_INCLUDE_DIRS@ )
+set( coral_LIBRARY_DIRS @coral_LIBRARY_DIRS@ )
+set( coral_LIBRARIES @coral_LIBRARIES@ )

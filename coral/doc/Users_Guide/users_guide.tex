@@ -1,0 +1,75 @@
+\documentclass[aps,prc,twocolumn,floatfix,preprintnumbers]{revtex4}
+%\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{color}
+
+\newcommand{\coral}{{\tt CorAL}}
+\newcommand{\reefer}{{\tt reefer}}
+
+%=============================================================================
+%  Frontmatter
+%=============================================================================
+\begin{document}
+
+\title{{\tt CorAL} User's Guide}
+
+\preprint{\rm UCRL-MA-?????}
+
+\author{David Brown}
+\author{Mike Heffner}
+\affiliation{Lawrence Livermore National Laboratory, Livermore, CA 94550 USA}
+
+\date{\today}
+
+\begin{abstract}
+empty abstract
+\end{abstract}
+
+\maketitle
+   
+%=============================================================================
+%  Main Text
+%=============================================================================
+\section{Introduction}
+\coral\, rules!
+
+We work in the Bertsch-Pratt coordinates in the pair center of mass frame.
+
+\begin{figure}
+\includegraphics[width=0.4\textwidth]{coords}
+\caption{The Bertsch-Pratt coordinates.}
+\label{coords}
+\end{figure}
+
+\input{globalparameters.tex}
+
+\input{inputfiles.tex}
+
+\input{actions.tex}
+
+\input{objects.tex}
+
+\input{kernels.tex}
+
+\acknowledgments
+This work was performed under the auspices of the U.S. Department of Energy by University of California, Lawrence Livermore National Laboratory under Contract W-7405-Eng-48.
+
+\appendix
+\section{Extending Source and Correlation Classes}
+\section{Source and Correlation Templates}
+
+%=============================================================================
+%  References
+%=============================================================================
+\onecolumngrid
+\begin{thebibliography}{70}
+
+  \bibitem{coderef} \coral\, Code Reference.
+
+  \bibitem{testentry} testentry 
+
+\end{thebibliography}
+
+\end{document}

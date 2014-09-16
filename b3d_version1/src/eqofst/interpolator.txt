@@ -1,0 +1,22 @@
+Cyrus Faroughy
+07/10/2009
+MSU REU program
+
+Version 1.0 of Interpolator class: Cinterpolator   
+
+The purpose of this class is to provide functions that return (linear) interpolated values for pressure, temperature, entropy density, relaxation time, speed of sound, shear viscosity and bulk viscosity for any given energy density "e" and specie in the 3D hydro code. When you create an object "interp" for the Cinterpolator class you can get the interpolated values of the quantities above by using the following functions:
+
+  interp->getP(e);    // returns interpolated value of Pressure (Mev) 
+  interp->getT(e);    // returns interpolated value of Temperature (Mev)           
+  interp->getS(e);    // returns interpolated value of entropy density
+  interp->getCs2(e);  // returns interpolated value of speed of sound (1/c) using s2 = sdens/dedT
+  interp->getTIS(e);  // returns interpolated value of israel stewart relaxation time (fm/c)
+  interp->getSV(e);   // returns interpolated value of shear viscosity (1/fm)
+  interp->getBV(e);   // returns interpolated value of bulk viscosity (1/fm)
+
+A mesh of points is created everytime an object is created. The mesh consist initially of "N" energy density points from 0 to "e_max" and separated by a stepsize "step". The code then creates other same-size arrays for pressure, temperature...etc using the class eqofst_threephase.h. Then, each of the functions of the list above (with a user-given input "e") will use the two points immediately truncating e and perform a simple linear interpolation and returns the value. Getting values for P, T...etc by using the interpolator will make the overall hydro code more efficient and faster than calling the eqofst_threephase.h class directly.
+
+The values for step, e_max and the choice of specie are controlled in the file def.h in 3dhydro directory which contains two preprocessing constants INTERP_STEP and INTERP_EMAX and the choice between species: standard hadrons equil, standard hadrons 5Q, pions only, relativistic gas and QGP. 
+The code is designed to output all the data mesh into a file if the user uncomments the corresponding section in interpolator.cc. 
+
+

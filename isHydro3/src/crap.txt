@@ -1,0 +1,5 @@
+
+// Added by Scott so that initial anisotropy will be set rather than initial rel. to entropy
+double svratio=parameter::getD(*pMap,"HYDRO_SVRATIO",0.0);
+double svinitmax=parameter::getD(*pMap,"HYDRO_INIT_NSMAX",0.0); // for statbility, don't pick larger than 0.33
+if(svratio>0.01) mInitNS=svinitmax/svratio;

@@ -1,0 +1,27 @@
+\section{Global Parameters}
+Global parameters are set upon creation of the globalparameters class, using the
+following scheme:
+\begin{enumerate}
+    \item Check command line for name of user's global parameter file
+    \item failing that, check for ``{\tt prefs.dat}''
+    \item failing that, default to settings in constructor
+\end{enumerate}
+
+Table~\ref{globalparams} lists all of the global parameters used by the code.
+You can put others in your prefs.dat file, but they will be ignored by the code.
+
+The syntax for the file is as follows.  Each entry is put in like:\\
+\verb+<option> = <setting>+
+
+\begin{table*}
+\begin{tabular}{|c|c|c|}
+    \hline
+    Option                 & Default Value & Description\\ \hline
+    {\tt messaging\_level} & 0             & description\\ \hline
+    {\tt momentum\_units}  & MeV           & description\\ \hline
+    {\tt distance\_units}  & fm            & description\\ \hline
+    {\tt comment\_string}  & \#            & description\\ \hline
+\end{tabular}
+\caption{Global settings.}
+\label{globalparams}
+\end{table*}

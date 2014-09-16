@@ -1,0 +1,7 @@
+#Resonance List for B3D model
+#Last Modified: Thu Mar 10 12:49:34 2011
+#Legend: ParticleCode Mass Charge BaryonNumber Strangeness Spin GParity DecayBool ResWidth ResName
+3 resonances
+111       135.0    0  0  0  0.   -1	0  0.0	pi0
+211       139.6    1  0  0  0.   -1	0  0.0	pi+   
+-211      139.6   -1  0  0  0.   -1	0  0.0	pi- 

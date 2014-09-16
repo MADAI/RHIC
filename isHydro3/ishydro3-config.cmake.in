@@ -1,0 +1,3 @@
+set( isHydro3_INCLUDE_DIRS @isHydro3_INCLUDE_DIRS@ )
+set( isHydro3_LIBRARY_DIRS @isHydro3_LIBRARY_DIRS@ )
+set( isHydro3_LIBRARIES @isHydro3_LIBRARIES@ )

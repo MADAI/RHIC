@@ -1,0 +1,128 @@
+\section{Command Options}
+In this section, we list all of the options available to each command and the
+defaults.
+
+\subsection{{\tt read}}
+Reads in an {\tt Object} named {\tt <object\_name>} from file {\tt
+<file\_name>} and inserts it into the {\tt ObjectMap}.  It is invoked by:
+\begin{verbatim}
+read <object_name> <file_name>
+\end{verbatim}
+
+\subsection{{\tt write}}
+Writes an {\tt Object} named {\tt <object\_name>} from the {\tt ObjectMap} to 
+file {\tt <file\_name>}.  It is invoked by:
+\begin{verbatim}
+write <object_name> <file_name>
+\end{verbatim}
+
+\subsection{{\tt create}}
+\begin{verbatim}
+create <object_name> <object_type>
+\end{verbatim}
+
+\subsection{{\tt expand}}
+\begin{verbatim}
+expand <3d_cart corr name> <3d_sphr corr name>
+\end{verbatim}
+
+\subsection{{\tt unexpand}}
+\begin{verbatim}
+unexpand <3d_sphr corr name> <3d_cart corr name>
+\end{verbatim}
+
+\subsection{{\tt image}}
+\begin{verbatim}
+image <corr_name> <source_name>
+\end{verbatim}
+
+\subsection{{\tt unimage}}
+\begin{verbatim}
+unimage <source_name> <corr_name>
+\end{verbatim}
+
+\subsection{{\tt chi2}}
+\begin{verbatim}
+chi2 <corr1>  <corr2> 
+\end{verbatim}
+
+\subsection{{\tt gaussparam}}
+\begin{verbatim}
+gaussparam <source_name> 
+\end{verbatim}
+
+\subsection{{\tt intbump}}
+\begin{verbatim}
+intbump <object_name>
+\end{verbatim}
+
+\subsection{{\tt powpec}}
+\begin{verbatim}
+powspec <object_name> 
+\end{verbatim}
+
+\subsection{{\tt fit}}
+\begin{verbatim}
+fit <corr_name>
+\end{verbatim}
+
+\subsection{{\tt fixtail}}
+\begin{verbatim}
+fixtail <corr_name> 
+\end{verbatim}
+
+\subsection{{\tt list}}
+\begin{verbatim}
+list
+\end{verbatim}
+
+\subsection{{\tt delete}}
+\begin{verbatim}
+delete <object_name> 
+\end{verbatim}
+
+\subsection{{\tt rename}}
+\begin{verbatim}
+rename <old_name> <new_name> 
+\end{verbatim}
+
+\subsection{{\tt help}}
+\begin{verbatim}
+help
+\end{verbatim}
+
+\subsection{{\tt quit}, {\tt stop}, {\tt exit}}
+\begin{verbatim}
+stop
+\end{verbatim}
+
+\subsection{{\tt import}}
+\begin{verbatim}
+import <filename> 
+\end{verbatim}
+
+\subsection{{\tt cd}}
+\begin{verbatim}
+cd <directory> 
+\end{verbatim}
+
+\subsection{{\tt slicerad}}
+Makes a file called {\tt <file\_name>} containing a slice of the object along
+the angle $\theta=${\tt theta}, $\phi=${\tt phi} in the Bertsch-Pratt
+coordinates.  Here $\theta$ is the angle with respect to the longitudinal axis
+(the z-axis) and $\phi$ is the angle with respect to the sidewards axis (the
+x-axis).  It is invoked by:
+\begin{verbatim}
+slicerad <object_name> <file_name> {
+    theta = <angle in rad>
+    phi = <angle in rad>
+}
+\end{verbatim}
+The output from this command is a file which contains a few lines of header
+information and 5 columns of data.  As is, the file can be plotted using the 
+package {\tt xmgrace}.
+
+\subsection{{\tt slices}, {\tt sliceo}, {\tt slicel}}
+
+\subsection{{\tt sliceso}, {\tt slicesl}, {\tt sliceol}}
+
