@@ -45,8 +45,8 @@ CB3D::CB3D(string run_name_set){
 	HYDRO_OCTANT_SYMMETRY=parameter::getI(parmap,"HYDRO_OCTANT",2);
 	HYDRO_PURE_BJORKEN=parameter::getB(parmap,"HYDRO_PURE_BJORKEN",false);
 	BARYON_ANNIHILATION=parameter::getB(parmap,"B3D_BARYON_ANNIHILATION",true);
-	DELNPARTSTOT=parameter::getD(parmap,"B3D_DELNPARTSTOT",500);
-	DELNACTIONSTOT=parameter::getD(parmap,"B3D_DELNACTIONSTOT",500);
+	DELNPARTSTOT=parameter::getD(parmap,"B3D_DELNPARTSTOT",1000);
+	DELNACTIONSTOT=parameter::getD(parmap,"B3D_DELNACTIONSTOT",2000);
 	NSCATT_MAX=parameter::getI(parmap,"B3D_NSCATT_MAX",0);
 	USE_OLD_SAMPLER=parameter::getB(parmap,"B3D_USE_OLD_SAMPLER",false);
 	BINARY_RW=parameter::getB(parmap,"B3D_BINARY_RW",false);
@@ -60,6 +60,10 @@ CB3D::CB3D(string run_name_set){
 	npartstot=nactionstot=0;
 	DXY=XYMAX/double(NXY);
 	DETA=ETAMAX/double(NETA);
+
+	ibalmax=0;
+	BALANCE_DECAY=parameter::getB(parmap,"B3D_BALANCE_DECAY",false);
+	BALANCE_CALC=parameter::getB(parmap,"B3D_BALANCE_CALC",false);
 	
 	CResList::b3d=this;
 	CPart::b3d=this;

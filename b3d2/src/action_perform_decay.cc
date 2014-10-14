@@ -3,7 +3,7 @@
 #include "b3d.h"
 
 void CAction::PerformDecay(){
-	CPart *mother,*dptr;
+	CPart *mother,*dptr,*dptrb;
 	CPartMap::iterator ppos;
 	int ibody,nbodies,alpha;
 	double mtot,mt,etamax=b3d->ETAMAX,mothermass;
@@ -76,6 +76,24 @@ void CAction::PerformDecay(){
 		dptr->active=true;
 		dptr->weight=mother->weight;
 		dptr->reality=mother->reality;
+		dptr->balanceID=mother->balanceID;
+		if(b3d->BALANCE_DECAY){
+			if(mother->reality){
+				dptrb=b3d->GetDeadPart();
+				dptrb->Copy(dptr);
+				dptrb->balanceID=b3d->ibalmax+1;
+				b3d->SplitPart(dptr,dptrb);
+				dptrb->nscatt=0;
+				dptrb->tau_lastint=tau;
+				dptrb->actionmother=b3d->nactions;
+				if(dptrb->currentmap!=mother->currentmap)
+					dptrb->ChangeMap(mother->currentmap);
+				dptrb->ChangeCell(dptrb->FindCell());
+				dptrb->reality=false;
+				dptrb->weight=1;
+				dptrb->FindActions();
+			}
+		}
 		if(dptr->reality){
 			dptr->nscatt=0;
 		}
@@ -84,13 +102,14 @@ void CAction::PerformDecay(){
 		}
 		dptr->tau_lastint=tau;
 		dptr->actionmother=b3d->nactions;
-		dptr->ChangeCell(mother->cell);
+		dptr->ChangeCell(dptr->FindCell());
 		if(dptr->currentmap!=mother->currentmap)
 			dptr->ChangeMap(mother->currentmap);
 		dptr->FindActions();
 	}
+	if(b3d->BALANCE_DECAY && mother->reality)
+		b3d->ibalmax+=1;
 	mother->Kill();
-	
 	b3d->ndecay+=1;
 }
 #endif

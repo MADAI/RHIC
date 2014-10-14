@@ -13,6 +13,7 @@ CPart::CPart(){
 	currentmap=NULL;
 	cell=NULL;
 	active=false;
+	balanceID=0;
 }
 
 CPart::CPart(int keyset){
@@ -35,6 +36,7 @@ CPart::CPart(int keyset){
 	nscatt=0;
 	reality=true;
 	weight=1;
+	balanceID=0;
 	b3d->DeadPartMap.insert(CPartPair(key,this));
 	b3d->npartstot+=1;
 }
@@ -78,12 +80,17 @@ void CPart::CopyMomentumInfo(CPart *part){  //copies all info except actionmap
 	}
 }
 
+void CPart::InitBalance(int IDset,double rxset,double ryset,double tauset,double etaset,double pxset,double pyset,double mset,double rapidityset,int weightset,bool realset,int balanceIDset){
+	realset=false;
+	Init(IDset,rxset,ryset,tauset,etaset,pxset,pyset,mset,rapidityset,weightset,realset);
+	balanceID=balanceIDset;
+}
+
 void CPart::Init(int IDset,double rxset,double ryset,double tauset,double etaset,double pxset,double pyset,double mset,double rapidityset,int weightset,bool realset){
 	double et;
 	CResInfo *resinfoptr;
 	int ID;
-	//cout << "Initializing particle" << endl;
-	//printf("IDset=%d, r=(%g,%g,%g,%g), p0=(%g,%g,%g,%g)\n",IDset,r[0],r[1],r[2],r[3],p0[0],p0[1],p0[2],p0[3]);
+	balanceID=0;
 	resinfo=b3d->reslist->GetResInfoPtr(IDset);
 	ID=resinfo->code;
 	if(ID!=IDset){
@@ -145,8 +152,8 @@ void CPart::Print(){
 	printf("Minv^2=%g, ID=%d\n",p[0]*p[0]-p[1]*p[1]-p[2]*p[2]-p[3]*p[3],resinfo->code);
 	printf("ID=%d, m_onshell=%g, M=%g, tau0=%g=?%g, tauexit=%g\n r=(%g,%g,%g,%g) eta=%g=?%g\n", 
 		resinfo->code,resinfo->mass,sqrt(msquared),double(tau0),sqrt(r[0]*r[0]-r[3]*r[3]),tauexit,r[0],r[1],r[2],r[3],eta,GetEta(tau0));
-	printf("weight=%d, reality=%d, key=%d, actionmother=%d, active=%d\n",
-		weight,int(reality),key,actionmother,int(active));
+	printf("weight=%d, reality=%d, key=%d, actionmother=%d, active=%d, balanceID=%d\n",
+		weight,int(reality),key,actionmother,int(active),balanceID);
 	printf("p=(%15.9e,%15.9e,%15.9e,%15.9e), y=%g =? %g\n",p[0],p[1],p[2],p[3],y,atanh(p[3]/p[0]));
 	string currentmapname="IN CELL";
 	if(currentmap==&(b3d->PartMap)) currentmapname="PartMap";
@@ -218,7 +225,7 @@ void CPart::AddAction(CAction *action){
 }
 
 void CPart::Propagate(double tau){
-	if(abs(eta)>b3d->ETAMAX){
+	if(b3d->BJORKEN && abs(eta)>b3d->ETAMAX){
 		printf("eta screwy before propagation\n");
 		printf("eta=%g\n",eta);
 	}

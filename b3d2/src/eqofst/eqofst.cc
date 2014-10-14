@@ -47,8 +47,6 @@ void CEqofst::DestroyNewtonArrays(){
 
 void CEqofst::FindXwhereYeqMX(int NDIM){
 	int iQ,jQ;
-
-
 	if(gslmatrix[NDIM]==NULL){
 		gslmatrix[NDIM]=new CGSLMatrix_Real(NDIM);
 	}

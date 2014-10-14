@@ -46,7 +46,6 @@ include/chebyshev_fit.h\
 include/sf.h\
 include/coralutils.h
 
-
 CORAL_OBJFILES = build/coral/minimization.o\
 build/coral/sfit.o\
 build/coral/sfit_3dgaussian.o\

@@ -57,14 +57,29 @@ void CAction::MoveToActionMap(){
 }
 
 void CAction::Kill(){
+	CPart *part;
+	CPartMap::iterator ppos;
 	if(currentmap==&b3d->ActionMap){
 		CActionMap::iterator eepos,epos=GetPos(currentmap);
+		if(epos==currentmap->end()){
+			printf("in CAction::Kill(), not in map\n");
+			printf("b3d->ActionMap.size()=%d\n",int(b3d->ActionMap.size()));
+			ppos=partmap.begin();
+			part=ppos->second;
+			part->Print();
+			epos=GetPos(&b3d->DeadActionMap);
+			if(epos!=b3d->DeadActionMap.end()){
+				printf("found action in DeadActionMap\n");
+			}
+			printf("not in DeadActionMap either\n");
+			exit(1);
+		}
 		currentmap->erase(epos);
-		key=log(abs(key)+0.1);
 		b3d->nactionkills+=1;
+		//key=0;
 		AddToMap(b3d->DeadActionMap.end(),&b3d->DeadActionMap);
-		CPart *part;
-		CPartMap::iterator ppos=partmap.begin();
+		//AddToMap(&b3d->DeadActionMap);
+		ppos=partmap.begin();
 		while(ppos!=partmap.end()){
 			part=ppos->second;
 			epos=part->actionmap.begin();

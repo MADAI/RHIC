@@ -159,6 +159,10 @@ public:
 
 	void freegascalc_onespecies(double m,double t,double &p,double &e,double &dens,double &sigma2,double &dedt);
 	
+	bool BALANCE_DECAY,BALANCE_CALC;
+	int ibalmax;
+	void ReadBalanceParts();
+	
 	// These are used for Analysis
 	CPart **partarray;
 	bool CALCGARRAYS;
@@ -177,7 +181,6 @@ public:
 	void CalcHBT_ALICE();
 	void CalcRealityDiff();
 	void CalcGamma();
-	void CalcBalance();
 	double legendre(int ell,double x);
 	void Consolidate(string run_name);
 };
@@ -213,6 +216,7 @@ public:
 	void PerformExitCell();
 	void PerformDecay();
 	void PerformCollide();
+	void PerformCollide_BALANCE();
 	void PerformResetCollisions();
 	array <CResInfo *,5> daughterresinfo;
 	//void PerformSwallowParticles();

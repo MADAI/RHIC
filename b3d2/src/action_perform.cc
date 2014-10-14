@@ -20,11 +20,11 @@ void CAction::Perform(){
 		exit(1);
 	}
 	
-	if(type==0){
-		PerformActivate();
-	}
-	else if(type==6){
+	if(type==6){
 		PerformExitCell();
+	}
+	else if(type==0){
+		PerformActivate();
 	}
 	else if(type==1){
 		PerformDecay();

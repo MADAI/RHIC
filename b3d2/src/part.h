@@ -33,6 +33,8 @@ public:
 	double y,eta,msquared;
 	FourVector p,r;
 	int listid,nscatt;
+	int balanceID;
+	void InitBalance(int ID,double x,double y,double tau,double eta,double px,double py,double mass,double rapidity,int weight,bool reality,int balanceid);
 	bool reality;
 	int weight;
 	int actionmother; //refers to action from which particle was created
@@ -40,7 +42,6 @@ public:
 	bool active;
 	CPartMap *currentmap; // PartList for a Cell, or b3d->DeadPartList
 	
-
 	void Propagate(double tau);
 	void FindDecay();
 	void FindCellExit();

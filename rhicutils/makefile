@@ -11,9 +11,9 @@ INC=-I include -I ${MADAI_GSLPATH}/include -I ${MADAI_INSTALLDIR}/include/madai 
 
 LB=-L ${MADAI_INSTALLDIR}/lib/madai -L ${MADAI_GSLPATH}/lib -lcoralutils -lgsl -lgslcblas
 
-all : lib/librhicutils.a bin/bmaker
+all : utilsdirs lib/librhicutils.a bin/bmaker
 
-statdirs :
+utilsdirs :
 	mkdir -p lib;\
 	mkdir -p include;\
 	mkdir -p bin;\
@@ -37,7 +37,7 @@ include/latin_center.h : src/latin_center.h
 
 #########################
 
-install : statdirs ${MADAI_INSTALLDIR}/lib/madai/librhicutils.a ${MADAI_INSTALLDIR}/include/madai/qualifier.h install_bmaker
+install : utilsdirs ${MADAI_INSTALLDIR}/lib/madai/librhicutils.a ${MADAI_INSTALLDIR}/include/madai/qualifier.h install_bmaker
 
 ${MADAI_INSTALLDIR}/lib/madai/librhicutils.a : lib/librhicutils.a
 	rm -f ${MADAI_INSTALLDIR}/lib/madai/librhicutils.a;

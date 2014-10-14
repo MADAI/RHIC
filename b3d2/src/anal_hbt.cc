@@ -357,7 +357,8 @@ void CB3D::CalcHBT_ALICE(){
 			printf("ROUT_PION_ALICE = %g +/- %g\n",Routbar[ialicebin],sigma);
 			printf("RSIDE_PION_ALICE = %g +/- %g\n",Rsidebar[ialicebin],sigma);
 			printf("RLONG_PION_ALICE = %g +/- %g\n",Rlongbar[ialicebin],sigma);
-			if(WRITEDETAILS) fprintf(detailsfile,"%6.2f %6.4f %6.4f %6.4f\n",ktbar,Routbar[ialicebin],Rsidebar[ialicebin],Rlongbar[ialicebin]);
+			if(WRITEDETAILS)
+				fprintf(detailsfile,"%6.2f %6.4f %6.4f %6.4f\n",ktbar,Routbar[ialicebin],Rsidebar[ialicebin],Rlongbar[ialicebin]);
 			ialicebin+=1;
 		}
 	}

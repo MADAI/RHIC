@@ -153,6 +153,61 @@ void CB3D::PrintMuTInfo(){
 	}
 }
 
+void CB3D::ReadBalanceParts(){
+	string filename=parameter::getS(parmap,"BALANCE_INPUT_FILENAME","vinzentdata/hadrons.csv");
+	FILE *fptr=fopen(filename.c_str(),"r");
+	CResInfo *resinfo;
+	char dummy[120];
+	fgets(dummy,120,fptr);
+	double x,y,z,t,E,px,py,pz,tau,eta,rapidity,mass;
+	int ibalance,pid,intweight=1,ibalread,oldibalread=-1,nidentical;
+	bool reality=false;
+	CPart *newpart;
+	ibalance=0;
+	nidentical=0;
+	newpart=GetDeadPart();
+	do{
+		fscanf(fptr,"%d %d %lf %lf %lf %lf %lf %lf %lf %lf",&pid,&ibalread,&x,&y,&z,&t,&E,&px,&py,&pz);
+		if(!feof(fptr)){
+			if(ibalread==oldibalread || nidentical!=0){
+				if(ibalance!=0){
+					//newpart->Print();
+					//printf("ibalance=%d, ibalread=%d\n",ibalance,ibalread);
+				}
+				newpart=GetDeadPart();
+				ibalmax=ibalance;
+				if(ibalread!=oldibalread)
+					ibalance+=1;
+			}
+			rapidity=0.5*log((E+pz)/(E-pz));
+			tau=sqrt(t*t-z*z);
+			eta=asinh(z/tau);
+			if(t<z){
+				printf("tau=%g\n",tau);
+				exit(1);
+			}
+			resinfo=reslist->GetResInfoPtr(pid);
+			mass=resinfo->mass;
+			newpart->InitBalance(pid,x,y,tau,eta,px,py,mass,rapidity,intweight,reality,ibalance);
+			if(ibalread==oldibalread)
+				nidentical+=1;
+			else
+				nidentical=0;
+			oldibalread=ibalread;
+		}
+	}while(!feof(fptr));
+	if(nidentical==0){
+		printf("Killing particle with balanceid=%d\n",newpart->balanceID);
+		newpart->Kill();
+		ibalmax-=1;
+	}
+	else{
+		//newpart->Print();
+		//printf("ibalance=%d, ibalread=%d\n",ibalance,ibalread);
+	}
+	printf("ibalmax=%d\n",ibalmax);
+}
+
 void CB3D::ListFutureCollisions(){
 	CActionMap::iterator epos=ActionMap.begin();
 	CAction *action;
@@ -296,26 +351,39 @@ double CB3D::CalcSigma(CPart *part1,CPart *part2){
 	return sigma;
 }
 
+// Note part2 is fake and part1 is real
 void CB3D::SplitPart(CPart *part1,CPart *part2){
 	double oldeta,mt,g1,g2;
 	CB3DCell *cell;
-	part2->Copy(part1);
+	part2->Copy(part1); // does not change reality or weights
 	if(BJORKEN){
-		oldeta=part2->eta;
-		part2->eta=-ETAMAX+2.0*ETAMAX*randy->ran();
-		part2->y+=(part2->eta-oldeta);
-		part2->r[3]=part2->tau0*sinh(part2->eta);
-		part2->r[0]=sqrt(part2->tau0*part2->tau0+part2->r[3]*part2->r[3]);
-		mt=sqrt(part2->msquared+part2->p[1]*part2->p[1]+part2->p[2]*part2->p[2]);
-		part2->p[3]=mt*sinh(part2->y);
-		part2->Setp0();
+		oldeta=part1->eta;
+		part1->eta=-ETAMAX+2.0*ETAMAX*randy->ran();
+		part1->y+=(part1->eta-oldeta);
+		part1->r[3]=part1->tau0*sinh(part1->eta);
+		part1->r[0]=sqrt(part1->tau0*part1->tau0+part1->r[3]*part1->r[3]);
+		mt=sqrt(part1->msquared+part1->p[1]*part1->p[1]+part1->p[2]*part1->p[2]);
+		part1->p[3]=mt*sinh(part1->y);
+		part1->Setp0();
 	}
 	else{
 		randy->gauss2(&g1,&g2);
-		part2->r[1]+=0.5*g1;
-		part2->r[2]+=0.5*g2;
-		part2->eta+=0.5*randy->gauss()/tau;
+		part1->r[1]+=0.5*g1;
+		part1->r[2]+=0.5*g2;
+		oldeta=part1->eta;
+		part1->eta+=0.5*randy->gauss()/tau;
+		part1->y+=(part1->eta-oldeta);
+		part1->r[3]=part1->tau0*sinh(part1->eta);
+		part1->r[0]=sqrt(part1->tau0*part1->tau0+part1->r[3]*part1->r[3]);
+		mt=sqrt(part1->msquared+part1->p[1]*part1->p[1]+part1->p[2]*part1->p[2]);
+		part1->p[3]=mt*sinh(part1->y);
+		part1->Setp0();
 	}
+	
+	cell=part1->FindCell();
+	part1->ChangeCell(cell);
+	if(part1->currentmap!=&PartMap)
+		part1->ChangeMap(&PartMap);
 	
 	cell=part2->FindCell();
 	part2->ChangeCell(cell);
@@ -328,7 +396,7 @@ CPart* CB3D::GetDeadPart(){
 	if(DeadPartMap.size()==0){
 		for(int ipart=0;ipart<DELNPARTSTOT*NSAMPLE;ipart++)
 			newpart=new CPart(npartstot);
-		printf("made new parts, npartstot=%d\n",npartstot);
+		printf("made new parts, npartstot=%d, tau=%g\n",npartstot,tau);
 	}
 	return DeadPartMap.begin()->second;
 }
@@ -339,7 +407,7 @@ void CB3D::GetDeadParts(CPart *&part1,CPart *&part2){
 	while(DeadPartMap.size()<2){
 		for(ipart=0;ipart<DELNPARTSTOT*NSAMPLE;ipart++)
 			newpart=new CPart(npartstot);
-		printf("made new parts, npartstot=%d\n",npartstot);
+		printf("made new parts, npartstot=%d, tau=%g\n",npartstot,tau);
 	}
 	CPartMap::iterator ppos=DeadPartMap.begin();
 	part1=ppos->second;
@@ -353,7 +421,7 @@ void CB3D::GetDeadParts(array<CPart*,5> &product){
 	while(DeadPartMap.size()<5){
 		for(ipart=0;ipart<DELNPARTSTOT*NSAMPLE;ipart++)
 			newpart=new CPart(npartstot);
-		printf("made new parts, npartstot=%d\n",npartstot);
+		printf("made new parts, npartstot=%d, tau=%g\n",npartstot,tau);
 	}
 	CPartMap::iterator ppos=DeadPartMap.begin();
 	for(ipart=0;ipart<5;ipart++){
@@ -365,6 +433,16 @@ void CB3D::GetDeadParts(array<CPart*,5> &product){
 CAction* CB3D::GetDeadAction(){
 	CAction *action;
 	if(DeadActionMap.size()==0){
+		CPartMap::iterator ppos=PartMap.begin();
+		int nreal=0;
+		CPart *part;
+		while(ppos!=PartMap.end()){
+			part=ppos->second;
+			if(part->reality==true)
+				nreal+=1;
+			++ppos;
+		}
+		printf("nparts=%d, nreal=%d, tau=%g\n",int(PartMap.size()),nreal,tau);
 		for(int iaction=0;iaction<DELNACTIONSTOT*NSAMPLE;iaction++)
 			action=new CAction(nactionstot);
 		printf("created new actions, nactionstot=%d\n",nactionstot);

@@ -11,7 +11,7 @@ double CB3D::CalcSpectra_PHENIX(){
 	FILE *detailsfile;
 	const int NSPECIES=2,NPHI=12;
 	double PHENIX_PTMAX[NSPECIES]={1200,1600},PHENIX_PTMIN[NSPECIES]={200,400};
-	const int PHENIX_NPTBINS=16;
+	const int PHENIX_NPTBINS=20;
 	double PHENIX_DELPT=100.0;
 	double binnedPHENIX_spectra[NSPECIES][PHENIX_NPTBINS]={0.0};
 	double Rx[PHENIX_NPTBINS][NPHI]={0.0},PHENIX_Ry[PHENIX_NPTBINS][NPHI]={0.0},PHENIX_Rz2[PHENIX_NPTBINS][NPHI]={0.0};
@@ -86,16 +86,20 @@ double CB3D::CalcSpectra_PHENIX(){
 				//else if(ID==3334 || ID==-3334) ispecies=3;
 			
 				if(ispecies==0){
-					npions+=weight;
-					meanpt_pion+=pt*weight;
+					if(pt>PHENIX_PTMIN[0] && pt<PHENIX_PTMAX[0]){
+						npions+=weight;
+						meanpt_pion+=pt*weight;
+					}
 				}
 				if(ispecies==1) {
-					nkaons+=weight;
-					meanpt_kaon+=pt*weight;
+					if(pt>PHENIX_PTMIN[1] && pt<PHENIX_PTMAX[1]){
+						nkaons+=weight;
+						meanpt_kaon+=pt*weight;
+					}
 				}
 				if(ispecies==2){
-					nprotons+=weight;
-					meanpt_proton+=pt*weight;	
+						nprotons+=weight;
+						meanpt_proton+=pt*weight;	
 				}
 				if(ispecies==3){
 					nomegas+=weight;
@@ -133,7 +137,7 @@ double CB3D::CalcSpectra_PHENIX(){
 		printf("EVENT SHORTAGE?\n");
 	}
 	printf("nevents=%d, neventsmax=%d\n",nevents,neventsmax);
-	printf("<pt>=%g for pions, %g for kaons and %g for protons\n",meanpt_pion/double(npions),meanpt_kaon/double(nkaons),meanpt_proton/double(nprotons));
+	printf("<pt>=%g for pions and %g for kaons\n",meanpt_pion/double(npions),meanpt_kaon/double(nkaons));
 	printf("npions=%lld, nkaons=%lld, nprotons=%lld\n",npions,nkaons,nprotons);
 	printf("read in info for %d events\n",nevents);
 	/*
@@ -248,13 +252,9 @@ void CB3D::CalcSpectra_PHENIXppbar(){
 	CResInfo *resinfoptr;
 	const int NPHI=12;
 	double PHENIX_PTMAX=2000,PHENIX_PTMIN=600;
-	const int PHENIX_NPTBINS=16;
+	const int PHENIX_NPTBINS=20;
 	double PHENIX_DELPT=100.0;
 	double binnedPHENIX_spectra[PHENIX_NPTBINS]={0.0};
-	double Rx[PHENIX_NPTBINS][NPHI]={0.0},PHENIX_Ry[PHENIX_NPTBINS][NPHI]={0.0},PHENIX_Rz2[PHENIX_NPTBINS][NPHI]={0.0};
-	double Rx2[PHENIX_NPTBINS][NPHI]={0.0},Ry2[PHENIX_NPTBINS][NPHI]={0.0},Rz2[PHENIX_NPTBINS][NPHI]={0.0};
-	double wR_tot_PHENIX[PHENIX_NPTBINS][NPHI]={0.0},wR[PHENIX_NPTBINS][NPHI]={0.0};
-	double Rout_PHENIX[PHENIX_NPTBINS][NPHI],Rlong_PHENIX[PHENIX_NPTBINS][NPHI],Rside_PHENIX[PHENIX_NPTBINS][NPHI];
 	int neventsmax=parameter::getI(parmap,"B3D_NEVENTSMAX",10);
 	int ievent=1,nparts,nevents,ispecies,ID,ipt,iphi,n;
 	double yield,pt,meanpt,spread,sigma,sigmapt,sigmaspread,etot=0.0,mass,pz,rapidity,et,phi;
@@ -289,8 +289,8 @@ void CB3D::CalcSpectra_PHENIXppbar(){
 		command="mkdir -p "+detailsdirname;
 		system(command.c_str());
 	}
-	double meanpt_pion=0.0,meanpt_kaon=0.0,meanpt_proton=0.0,meanpt_omega=0.0;
-	long long int npions=0,nkaons=0,nprotons=0,nomegas=0;
+	double meanpt_proton=0.0;
+	long long int nprotons=0;
 	
 
 	NSAMPLE=parameter::getI(parmap,"B3D_NSAMPLE",1);
@@ -316,45 +316,15 @@ void CB3D::CalcSpectra_PHENIXppbar(){
 				weight=part->weight;
 				reality=part->reality;
 				ispecies=-1;
-				if(ID==211 || ID==-211) ispecies=0;
-				else if(ID==321 || ID==-321) ispecies=1;
-				else if(ID==2112 || ID==2212 || ID==-2112 || ID==-2212) ispecies=2;
-				else if(ID==3334 || ID==-3334) ispecies=3;
-				//			else if(ID!=22 && ID!=-311){
-				//				printf("why is particle here? ID=%d\n",ID);
-				//			}
-				//else if(abs(ID)!=311 &ma& abs(ID)!=3122 && abs(ID)!=22 && abs(ID)!=3222 
-				// && abs(ID)!=3312 && abs(ID)!=3112 && abs(ID)!=3322 && abs(ID)!=3334) 
-				//printf("ID=%d\n",ID);
-				//else if(ID==3334 || ID==-3334) ispecies=3;
-			
+				if(ID==2112 || ID==2212 || ID==-2112 || ID==-2212) ispecies=2;
 				if(ispecies==2){
-					nprotons+=weight;
-					meanpt_proton+=pt*weight;	
-				}
-			
-				if(ispecies==2){
-					ipt=lrint(floor(pt/PHENIX_DELPT));
-					iphi=lrint(floor(2.0*NPHI*phi/PI));
-					if(iphi>=NPHI || iphi<0){
-						printf("iphi=%d???\n",iphi);
-						exit(1);
+					if(pt>PHENIX_PTMIN && pt<PHENIX_PTMAX){
+						nprotons+=weight;
+						meanpt_proton+=pt*weight;	
 					}
+					ipt=lrint(floor(pt/PHENIX_DELPT));
 					if(ipt<PHENIX_NPTBINS){
 						binnedPHENIX_spectra[ipt]+=weight;
-					}
-					if(ispecies==0 && ipt<PHENIX_NPTBINS){
-						part->GetHBTPars(tau,rout,rside,rlong);
-						//printf("tau=%g, rout=%g, rside=%g, rlong=%g\n",tau,rout,rside,rlong);
-						//					printf("rout=%g, rside=%g, rlong=%g, tau=%g\n",rout,rside,rlong,tau);
-						tau=part->tau0;
-						wR_tot_PHENIX[ipt][iphi]+=weight;
-						w=exp(-pow(tau-20.0,2)/800.0);
-						wR[ipt][iphi]+=w*weight;
-						Rx2[ipt][iphi]+=w*rout*rout*weight;
-						Ry2[ipt][iphi]+=w*rside*rside*weight;
-						Rz2[ipt][iphi]+=w*rlong*rlong*weight;
-						Rx[ipt][iphi]+=w*rout*weight;
 					}
 				}
 			}
@@ -363,7 +333,6 @@ void CB3D::CalcSpectra_PHENIXppbar(){
 	if(nevents!=neventsmax){
 		printf("EVENT SHORTAGE?\n");
 	}
-	printf("nevents=%d, neventsmax=%d\n",nevents,neventsmax);
 	fclose(oscarfile);
 	oscarfile=NULL;
 
@@ -383,6 +352,7 @@ void CB3D::CalcSpectra_PHENIXppbar(){
 			fprintf(anal_output,"PHENIX_SPECTRA_PPBAR_pt%d %g %g\n",int(lrint(pt)),dmult,sigma);
 	}
 	meanpt=meanpt/yield;
+	printf("meanpt from array=%g\n",meanpt);
 	yield=0.5*yield/DELRAPIDITY ; // dN/dy of p+pbar in acceptance, factor of 0.5 for neutrons
 	fprintf(anal_output,"PHENIX_SPECTRA_PPBAR_YIELD %g %g\n",yield,0.06*yield);
 	fprintf(anal_output,"PHENIX_SPECTRA_PPBAR_MEANPT %g %g\n",meanpt,0.06*meanpt);
@@ -485,16 +455,22 @@ double CB3D::CalcSpectra_ALICE(){
 				//else if(ID==3334 || ID==-3334) ispecies=3;
 			
 				if(ispecies==0){
-					npions+=weight;
-					meanpt_pion+=pt*weight;
+					if(pt>ALICE_PTMIN[0] && pt<ALICE_PTMAX[0]){
+						npions+=weight;
+						meanpt_pion+=pt*weight;
+					}
 				}
 				if(ispecies==1) {
-					nkaons+=weight;
-					meanpt_kaon+=pt*weight;
+					if(pt>ALICE_PTMIN[1] && pt<ALICE_PTMAX[1]){
+						nkaons+=weight;
+						meanpt_kaon+=pt*weight;
+					}
 				}
 				if(ispecies==2){
-					nprotons+=weight;
-					meanpt_proton+=pt*weight;	
+					if(pt>ALICE_PTMIN[2] && pt<ALICE_PTMAX[2]){
+						nprotons+=weight;
+						meanpt_proton+=pt*weight;
+					}
 				}
 				if(ispecies==3){
 					nomegas+=weight;
