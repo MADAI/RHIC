@@ -29,10 +29,11 @@ double gaussrand() {
 
 int main() {
     const size_t nbins = 100;
-    auto h = Histogram(nbins, -5, 5);
+    auto h = Histogram<double>(nbins, -5, 5);
     for (size_t i = 0; i < 100000000; i++)
         h.add(gaussrand());
     for (size_t i = 0; i < nbins; i++)
         std::cout << h.histogram[i] << "  ";
     std::cout << std::endl;
+    std::cout << "\n" << h.get_count(0) << std::endl;
 }
