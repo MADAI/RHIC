@@ -79,6 +79,7 @@ build/part.o\
 build/inelastic.o\
 build/resonances.o\
 build/anal_spectra.o\
+build/anal_balance.o\
 build/anal_hbt.o\
 build/anal_v2.o\
 build/consolidate.o\
@@ -215,6 +216,9 @@ build/inelastic.o : src/inelastic.cc ${B3D_HFILES}
 	
 build/anal_spectra.o : src/anal_spectra.cc ${B3D_HFILES}
 	${CPP} -c ${OPT} ${INC} ${MADAI_COMPILERDEFS} -o build/anal_spectra.o src/anal_spectra.cc
+
+build/anal_balance.o : src/anal_balance.cc ${B3D_HFILES}
+	${CPP} -c ${OPT} ${INC} ${MADAI_COMPILERDEFS} -o build/anal_balance.o src/anal_balance.cc
 	
 build/anal_hbt.o : src/anal_hbt.cc ${B3D_HFILES}
 	${CPP} -c ${OPT} ${INC} ${MADAI_COMPILERDEFS} -o build/anal_hbt.o src/anal_hbt.cc
