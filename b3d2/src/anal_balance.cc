@@ -2,6 +2,8 @@
 #include <unordered_set>
 #include <utility>
 
+#include <boost/functional/hash.hpp> // needed for hashing pairs
+
 #include "b3d.h"
 #include "hist.h"
 
@@ -30,47 +32,78 @@ void CB3D::CalcBalance() {
 
     /// Balance functions to calculate.
     vector<pair<int, int>> balance_pairs = { {211, -211}, {321, -321} };
-    /// Relevant species.
+    /// Relevant species (ignore anti particles).
     unordered_set<int> balance_species;
     for (const auto& pair : balance_pairs) {
-        balance_species.insert(pair.first);
-        balance_species.insert(-pair.first);
-        balance_species.insert(pair.second);
-        balance_species.insert(-pair.second);
+        balance_species.insert(abs(pair.first));
+        balance_species.insert(abs(pair.second));
     }
-    /// A histogram for each species
-    unordered_map<int, Histogram<double>> histograms;
-    histograms.reserve(balance_species.size());
+    /// A rapidity histogram for each balance function.
+    unordered_map<pair<int, int>, Histogram<double>, boost::hash<pair<int, int>>> histograms;
+    histograms.reserve(balance_pairs.size());
     // TODO: figure out what the following constants should be.
     const size_t nbins = 100;
-    const double min_eta = -2;
-    const double max_eta = 2;
+    const double min_y = -1;
+    const double max_y = 1;
+    const double max_dy = max_y - min_y;
+    const double min_dy = 0;
+    for (const auto& pair : balance_pairs) {
+        histograms.emplace(make_pair(pair, Histogram<double>(nbins, min_dy, max_dy)));
+    }
+    /// Number for each species.
+    /// (Needed for denominator of balance function.)
+    unordered_map<int, int64_t> total_number(balance_species.size());
     for (const auto& PID : balance_species) {
-        histograms.emplace(make_pair(PID, Histogram<double>(nbins, min_eta, max_eta)));
+        total_number[PID] = 0;
     }
 
 	int nevents = 0;
 	do {
 	    KillAllParts();
-		const int nparts = ReadOSCAR(nevents+1);
-		if (nparts > 0){
+		const int nparts = ReadOSCAR(nevents + 1);
+		if (nparts > 0) {
 			nevents += 1;
 			//printf("before, nparts=%d =? %d\n",nparts,int(FinalPartMap.size()));
 			PerformAllActions(); // Decays unstable particles
 			//printf("after decays, nparts=%d\n",int(FinalPartMap.size()));
 
-            // We need a histogram in eta for each species and antispecies.
+            // We are only interested in particles occuring in the balance function
+            // and with y_min <= y <= y_max.
+            vector<CPart> relevant_particles; // TODO: only remeber weight, charge, rapidity and momentum
 			for (const auto& ppos : FinalPartMap) {
 				const auto part = ppos.second;
 				const int PID = part->resinfo->code;
-                const auto search = histograms.find(PID);
+                const int charge = part->resinfo->charge;
+                const int weight = part->weight;
+                const double y = part->y;
+                // Skip particles we do not care about.
+                if (balance_species.count(abs(PID)) == 0 || y < min_y || y > max_y)
+                    continue;
+                relevant_particles.push_back(*part);
+                total_number[abs(PID)] += weight * abs(charge);
+            }
+
+            // Iterate over all pairs to calculate dy and fill histograms.
+            for (size_t i = 0; i < relevant_particles.size(); i++) for (size_t j = 0; j < i; j++) {
+                const auto& p_i = relevant_particles[i];
+                const auto& p_j = relevant_particles[j];
+                const double dy = fabs(p_i.y - p_j.y);
+                const auto mypair = make_pair(p_i.resinfo->code, p_j.resinfo->code);
+                const auto mypair_reversed = make_pair(mypair.second, mypair.first);
+
+                auto search = histograms.find(mypair);
                 if (search != histograms.end()) {
-                    const double eta = part->eta;
-                    const int weight = part->weight;
-                    const int charge = abs(part->resinfo->charge);
-                    search->second.add(eta, weight*charge);
+                    const int charge = p_j.resinfo->charge;
+                    const int weight = p_j.weight;
+                    search->second.add(dy, weight * charge);
                 }
-			}
+                search = histograms.find(mypair_reversed);
+                if (search != histograms.end()) {
+                    const int charge = p_i.resinfo->charge;
+                    const int weight = p_i.weight;
+                    search->second.add(dy, weight * charge);
+                }
+            }
 		}
 	} while (!feof(oscarfile) && nevents < neventsmax);
 	if (nevents != neventsmax) {
@@ -80,23 +113,19 @@ void CB3D::CalcBalance() {
 	oscarfile = NULL;
 
     // Calculate balance function.
-    // B_ab(eta) = (N_a(0) - N_-a(0))(N_b(eta) - N_-b(eta)) / (N_b(eta) + N_-b(eta))
+    // B_ab(y) = (N_a(0) - N_-a(0))(N_b(y) - N_-b(y)) / (N_b(y) + N_-b(y))
     for (const auto& mypair : balance_pairs) {
         vector<double> B(nbins);
         const int a = mypair.first;
         const int b = mypair.second;
         for (size_t i = 0; i < B.size(); i++) {
-            const int Na_pos = histograms.at(a).get_count(0);
-            const int Na_neg = histograms.at(-a).get_count(0);
-            const int Nb_pos = histograms.at(b).histogram[i];
-            const int Nb_neg = histograms.at(-b).histogram[i];
-            B[i] = (Na_pos - Na_neg) * (Nb_pos - Nb_neg) / (Nb_pos + Nb_neg);
+            B[i] = (double) histograms.find(mypair)->second.histogram[i] / total_number[abs(b)];
         }
         fprintf(anal_output, "B(%i, %i)\n", a, b);
-        fprintf(anal_output, "eta  B\n");
+        fprintf(anal_output, "y  B\n");
         for (size_t i = 0; i < B.size(); i++) {
-            const double eta = min_eta + (max_eta - min_eta) / nbins * (i + 0.5);
-            fprintf(anal_output, "%f  %f", eta, B[i]);
+            const double y = min_y + (max_y - min_y) / nbins * (i + 0.5);
+            fprintf(anal_output, "%f  %f\n", y, B[i]);
         }
     }
 
