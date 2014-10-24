@@ -6,10 +6,11 @@
 
 #include "b3d.h"
 #include "hist.h"
+#include "pow.h"
 
-/// Represent all balance functions.
-/// { (PID, PID): B(0, eta), ... }
-//typedef unordered_map<pair<int, int>, Histogram<double>> BalanceMap;
+int sign(double x) {
+    return (x > 0) - (x < 0);
+}
 
 /// Calculate the balance functions.
 void CB3D::CalcBalance() {
@@ -50,12 +51,18 @@ void CB3D::CalcBalance() {
     for (const auto& pair : balance_pairs) {
         histograms.emplace(make_pair(pair, Histogram<double>(nbins, min_dy, max_dy)));
     }
+    /// A pseudo-rapidity histogram for the charge-only balance function.
+    // TODO: use something other than min_dy/max_dy?
+    auto charge_histogram = Histogram<double>(nbins, min_dy, max_dy);
+
     /// Number for each species.
     /// (Needed for denominator of balance function.)
     unordered_map<int, int64_t> total_number(balance_species.size());
     for (const auto& PID : balance_species) {
         total_number[PID] = 0;
     }
+    /// Total number including all species.
+    int64_t total_number_all = 0;
 
 	int nevents = 0;
 	do {
@@ -79,8 +86,10 @@ void CB3D::CalcBalance() {
                 // Skip particles we do not care about.
                 if (balance_species.count(abs(PID)) == 0 || y < min_y || y > max_y)
                     continue;
+                // TODO: p_T cuts and efficiency
                 relevant_particles.push_back(*part);
                 total_number[abs(PID)] += weight * abs(charge);
+                total_number_all += weight * abs(charge);
             }
 
             // Iterate over all pairs to calculate dy and fill histograms.
@@ -91,6 +100,7 @@ void CB3D::CalcBalance() {
                 const auto mypair = make_pair(p_i.resinfo->code, p_j.resinfo->code);
                 const auto mypair_reversed = make_pair(mypair.second, mypair.first);
 
+                // For B(ab).
                 auto search = histograms.find(mypair);
                 if (search != histograms.end()) {
                     const int charge = p_j.resinfo->charge;
@@ -103,6 +113,19 @@ void CB3D::CalcBalance() {
                     const int weight = p_i.weight;
                     search->second.add(dy, weight * charge);
                 }
+
+                // For B(+-).
+                if (sign(p_i.resinfo->charge) == -sign(p_j.resinfo->charge)) {
+                    const double dpseudorapidity = fabs(
+                        atanh(p_i.p[3]/sqrt(square(p_i.p[1]) + square(p_i.p[2]) + square(p_i.p[3]))) -
+                        atanh(p_i.p[3]/sqrt(square(p_j.p[1]) + square(p_j.p[2]) + square(p_j.p[3])))
+                    );
+                    // We want to calculate B(+-), so we want the negative charge.
+                    const auto& p = p_i.resinfo->charge < 0 ? p_i : p_j;
+                    const int charge = p.resinfo->charge;
+                    const int weight = p.weight;
+                    charge_histogram.add(dpseudorapidity, weight * charge);
+                }
             }
 		}
 	} while (!feof(oscarfile) && nevents < neventsmax);
@@ -112,7 +135,7 @@ void CB3D::CalcBalance() {
 	fclose(oscarfile);
 	oscarfile = NULL;
 
-    // Calculate balance function.
+    // Calculate balance functions.
     // B_ab(y) = (N_a(0) - N_-a(0))(N_b(y) - N_-b(y)) / (N_b(y) + N_-b(y))
     for (const auto& mypair : balance_pairs) {
         vector<double> B(nbins);
@@ -127,6 +150,15 @@ void CB3D::CalcBalance() {
             const double y = min_y + (max_y - min_y) / nbins * (i + 0.5);
             fprintf(anal_output, "%f  %f\n", y, B[i]);
         }
+        fprintf(anal_output, "\n");
+    }
+
+    vector<double> B_charge(nbins);
+    fprintf(anal_output, "B(+, -)\n");
+    for (size_t i = 0; i < B_charge.size(); i++) {
+        B_charge[i] = (double) charge_histogram.histogram[i] / total_number_all;
+        const double pseudorapidity = min_y + (max_y - min_y) / nbins * (i + 0.5);
+        fprintf(anal_output, "%f  %f\n", pseudorapidity, B_charge[i]);
     }
 
 	delete reslist;
