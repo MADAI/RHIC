@@ -102,7 +102,7 @@ void CPart::Init(int IDset,double rxset,double ryset,double tauset,double etaset
 	nscatt=0;
 	weight=weightset;
 	reality=realset;
-	if(fabs(eta)>b3d->ETAMAX){
+	if(fabs(eta)>b3d->ETAMAX && b3d->BJORKEN){
 		printf("in part->init, eta out of bounds, =%g\n",eta);
 	}
 	resinfoptr=b3d->reslist->GetResInfoPtr(ID);
