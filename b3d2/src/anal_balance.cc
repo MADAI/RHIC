@@ -81,7 +81,7 @@ void CB3D::CalcBalance() {
 
             // We are only interested in particles occuring in the balance function
             // and with y_min <= y <= y_max.
-            vector<CPart> relevant_particles; // TODO: only remeber weight, charge, rapidity and momentum
+            vector<CPart> relevant_particles; // TODO: only remember weight, charge, rapidity and momentum
             for (const auto& ppos : FinalPartMap) {
                 const auto part = ppos.second;
                 const int PID = part->resinfo->code;
@@ -152,13 +152,14 @@ void CB3D::CalcBalance() {
         vector<double> B(nbins);
         const int a = mypair.first;
         const int b = mypair.second;
+        const auto& histogram = histograms.find(mypair)->second;
         for (size_t i = 0; i < B.size(); i++) {
-            B[i] = (double) histograms.find(mypair)->second.histogram[i] / total_number[abs(b)];
+            B[i] = (double) histogram.histogram[i] / total_number[abs(b)];
         }
         fprintf(anal_output, "B(%i, %i)\n", a, b);
         fprintf(anal_output, "y  B\n");
         for (size_t i = 0; i < B.size(); i++) {
-            const double y = min_y + (max_y - min_y) / nbins * (i + 0.5);
+            const double y = histogram.get_value(i);
             fprintf(anal_output, "%f  %f\n", y, B[i]);
         }
         fprintf(anal_output, "\n");
@@ -168,7 +169,7 @@ void CB3D::CalcBalance() {
     fprintf(anal_output, "B(+, -)\n");
     for (size_t i = 0; i < B_charge.size(); i++) {
         B_charge[i] = (double) charge_histogram.histogram[i] / total_number_all;
-        const double pseudorapidity = min_y + (max_y - min_y) / nbins * (i + 0.5);
+        const double pseudorapidity = charge_histogram.get_value(i);
         fprintf(anal_output, "%f  %f\n", pseudorapidity, B_charge[i]);
     }
 
