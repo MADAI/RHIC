@@ -16,21 +16,21 @@ int sign(double x) {
 void CB3D::CalcBalance() {
     std::cout << "*** Calculating balance functions..." << std::endl;
     NSAMPLE = parameter::getI(parmap, "B3D_NSAMPLE", 1);
-	const int neventsmax = parameter::getI(parmap, "B3D_NEVENTSMAX", 10);
+    const int neventsmax = parameter::getI(parmap, "B3D_NEVENTSMAX", 10);
 
     const string dirname = "analysis/" + run_name + "/" + qualifier;
-	const string command = "mkdir -p " + dirname;
-	system(command.c_str());
-	const string anal_output_filename = dirname + "/results_balance.dat";
-	auto anal_output = fopen(anal_output_filename.c_str(), "w");
+    const string command = "mkdir -p " + dirname;
+    system(command.c_str());
+    const string anal_output_filename = dirname + "/results_balance.dat";
+    auto anal_output = fopen(anal_output_filename.c_str(), "w");
 
-	parameter::set(parmap, string("B3D_RESONANCES_DECAYS_FILE"), string("progdata/madai/resinfo/decays_pdg_weak.dat"));
-	parameter::set(parmap, string("B3D_RESONANCES_INFO_FILE"), string("progdata/madai/resinfo/resonances_pdg_weak.dat"));
-	reslist = new CResList();
-	reslist->ReadResInfo();
+    parameter::set(parmap, string("B3D_RESONANCES_DECAYS_FILE"), string("progdata/madai/resinfo/decays_pdg_weak.dat"));
+    parameter::set(parmap, string("B3D_RESONANCES_INFO_FILE"), string("progdata/madai/resinfo/resonances_pdg_weak.dat"));
+    reslist = new CResList();
+    reslist->ReadResInfo();
 
-	const double DELRAPIDITY = 2.0 * parameter::getD(parmap, "B3D_ETAMAX", 1.0);
-	COLLISIONS = false;
+    const double DELRAPIDITY = 2.0 * parameter::getD(parmap, "B3D_ETAMAX", 1.0);
+    COLLISIONS = false;
     oscarfile = NULL;
     //^ We need to set this, so the header gets read. Otherwise `feof(oscarfile) == true`.
 
@@ -67,23 +67,23 @@ void CB3D::CalcBalance() {
     /// Total number including all species.
     int64_t total_number_all = 0;
 
-	int nevents = 0;
-	do {
-	    KillAllParts();
-		const int nparts = ReadOSCAR(nevents + 1);
+    int nevents = 0;
+    do {
+        KillAllParts();
+        const int nparts = ReadOSCAR(nevents + 1);
         std::cout << nparts << std::endl;
-		if (nparts > 0) {
-			nevents += 1;
-			//printf("before, nparts=%d =? %d\n",nparts,int(FinalPartMap.size()));
-			PerformAllActions(); // Decays unstable particles
-			//printf("after decays, nparts=%d\n",int(FinalPartMap.size()));
+        if (nparts > 0) {
+            nevents += 1;
+            //printf("before, nparts=%d =? %d\n",nparts,int(FinalPartMap.size()));
+            PerformAllActions(); // Decays unstable particles
+            //printf("after decays, nparts=%d\n",int(FinalPartMap.size()));
 
             // We are only interested in particles occuring in the balance function
             // and with y_min <= y <= y_max.
             vector<CPart> relevant_particles; // TODO: only remeber weight, charge, rapidity and momentum
-			for (const auto& ppos : FinalPartMap) {
-				const auto part = ppos.second;
-				const int PID = part->resinfo->code;
+            for (const auto& ppos : FinalPartMap) {
+                const auto part = ppos.second;
+                const int PID = part->resinfo->code;
                 const int charge = part->resinfo->charge;
                 const int weight = part->weight;
                 const double y = part->y;
@@ -136,14 +136,14 @@ void CB3D::CalcBalance() {
                     charge_histogram.add(dpseudorapidity, weight * charge);
                 }
             }
-		}
-	} while (!feof(oscarfile) && nevents < neventsmax);
-	if (nevents != neventsmax) {
-		printf("EVENT SHORTAGE? Got %i, expected %i.\n", nevents, neventsmax);
+        }
+    } while (!feof(oscarfile) && nevents < neventsmax);
+    if (nevents != neventsmax) {
+        printf("EVENT SHORTAGE? Got %i, expected %i.\n", nevents, neventsmax);
         std::cout << oscarfile << " vs. " << feof(oscarfile) << std::endl;
-	}
-	fclose(oscarfile);
-	oscarfile = NULL;
+    }
+    fclose(oscarfile);
+    oscarfile = NULL;
 
     // Calculate balance functions.
     // B_ab(y) = (N_a(0) - N_-a(0))(N_b(y) - N_-b(y)) / (N_b(y) + N_-b(y))
@@ -171,6 +171,6 @@ void CB3D::CalcBalance() {
         fprintf(anal_output, "%f  %f\n", pseudorapidity, B_charge[i]);
     }
 
-	delete reslist;
-	fclose(anal_output);
+    delete reslist;
+    fclose(anal_output);
 }
