@@ -51,12 +51,13 @@ void CB3D::CalcBalance() {
     const double max_y = 1;
     const double max_dy = max_y - min_y;
     const double min_dy = 0;
+    const double min_deta = 0;
+    const double max_deta = 7;
     for (const auto& pair : balance_pairs) {
         histograms.emplace(make_pair(pair, Histogram<double>(nbins, min_dy, max_dy)));
     }
     /// A pseudo-rapidity histogram for the charge-only balance function.
-    // TODO: use something other than min_dy/max_dy?
-    auto charge_histogram = Histogram<double>(nbins, min_dy, max_dy);
+    auto charge_histogram = Histogram<double>(nbins, min_deta, max_deta);
 
     /// Number for each species.
     /// (Needed for denominator of balance function.)
@@ -71,7 +72,7 @@ void CB3D::CalcBalance() {
     do {
         KillAllParts();
         const int nparts = ReadOSCAR(nevents + 1);
-        std::cout << nparts << std::endl;
+        std::cout << "Processing " << nparts << " particles..." << std::endl;
         if (nparts > 0) {
             nevents += 1;
             //printf("before, nparts=%d =? %d\n",nparts,int(FinalPartMap.size()));
