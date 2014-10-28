@@ -14,6 +14,7 @@ int sign(double x) {
 
 /// Calculate the balance functions.
 void CB3D::CalcBalance() {
+    std::cout << "*** Calculating balance functions..." << std::endl;
     NSAMPLE = parameter::getI(parmap, "B3D_NSAMPLE", 1);
 	const int neventsmax = parameter::getI(parmap, "B3D_NEVENTSMAX", 10);
 
@@ -30,6 +31,8 @@ void CB3D::CalcBalance() {
 
 	const double DELRAPIDITY = 2.0 * parameter::getD(parmap, "B3D_ETAMAX", 1.0);
 	COLLISIONS = false;
+    oscarfile = NULL;
+    //^ We need to set this, so the header gets read. Otherwise `feof(oscarfile) == true`.
 
     /// Balance functions to calculate.
     vector<pair<int, int>> balance_pairs = { {211, -211}, {321, -321} };
@@ -68,6 +71,7 @@ void CB3D::CalcBalance() {
 	do {
 	    KillAllParts();
 		const int nparts = ReadOSCAR(nevents + 1);
+        std::cout << nparts << std::endl;
 		if (nparts > 0) {
 			nevents += 1;
 			//printf("before, nparts=%d =? %d\n",nparts,int(FinalPartMap.size()));
@@ -116,10 +120,15 @@ void CB3D::CalcBalance() {
 
                 // For B(+-).
                 if (sign(p_i.resinfo->charge) == -sign(p_j.resinfo->charge)) {
-                    const double dpseudorapidity = fabs(
-                        atanh(p_i.p[3]/sqrt(square(p_i.p[1]) + square(p_i.p[2]) + square(p_i.p[3]))) -
-                        atanh(p_i.p[3]/sqrt(square(p_j.p[1]) + square(p_j.p[2]) + square(p_j.p[3])))
-                    );
+                    double p_i_mag = sqrt(square(p_i.p[1]) + square(p_i.p[2]) + square(p_i.p[3]));
+                    double p_j_mag = sqrt(square(p_j.p[1]) + square(p_j.p[2]) + square(p_j.p[3]));
+                    // Avoid dividing by zero (which would result in nans).
+                    if (p_i_mag == 0)
+                        p_i_mag = 1;
+                    if (p_j_mag == 0)
+                        p_j_mag = 1;
+                    const double dpseudorapidity = fabs( atanh(p_i.p[3] / p_i_mag) - atanh(p_j.p[3] / p_j_mag ) );
+                    assert(dpseudorapidity == dpseudorapidity);
                     // We want to calculate B(+-), so we want the negative charge.
                     const auto& p = p_i.resinfo->charge < 0 ? p_i : p_j;
                     const int charge = p.resinfo->charge;
@@ -130,7 +139,8 @@ void CB3D::CalcBalance() {
 		}
 	} while (!feof(oscarfile) && nevents < neventsmax);
 	if (nevents != neventsmax) {
-		printf("EVENT SHORTAGE?\n");
+		printf("EVENT SHORTAGE? Got %i, expected %i.\n", nevents, neventsmax);
+        std::cout << oscarfile << " vs. " << feof(oscarfile) << std::endl;
 	}
 	fclose(oscarfile);
 	oscarfile = NULL;
