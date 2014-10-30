@@ -20,6 +20,8 @@ class Histogram {
     int64_t get_count(T x) const;
     /// Return the value corresponding to the given bin.
     T get_value(size_t bin) const;
+    /// Sum all counts.
+    int64_t sum() const;
   private:
     /// Get the bin correponding to a value.
     double get_bin(T x) const;
@@ -62,4 +64,12 @@ template <typename T>
 T Histogram<T>::get_value(size_t bin) const {
     assert(bin < histogram.size());
     return x_min + (x_max - x_min) / nbins * (bin + 0.5);
+}
+
+template <typename T>
+int64_t Histogram<T>::sum() const {
+    int64_t sum = 0;
+    for (const auto s : histogram)
+        sum += s;
+    return sum;
 }
