@@ -54,7 +54,7 @@ void CB3D::CalcBalance() {
     /// A rapidity histogram for each balance function.
     unordered_map<pair<int, int>, Histogram<double>, boost::hash<pair<int, int>>> histograms;
     // TODO: figure out what the following constants should be.
-    const size_t nbins = 100;
+    const size_t nbins = 80;
     const double min_y = -1;
     const double max_y = 1;
     const double max_dy = max_y - min_y;
