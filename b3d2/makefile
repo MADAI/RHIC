@@ -14,6 +14,7 @@ GSLPATH=${MADAI_GSLPATH}
 #e.g. /opt/local
 HDF5_HOME=${MADAI_HDF5_HOME}
 #e.g. /opt/local
+BOOST_INCLUDE=${MADAI_BOOST_HOME}/include
 #########################################################################
 #HOPEFULLY, everything below need not be touched
 
@@ -36,7 +37,7 @@ installdirs :
 clean :
 	rm -f build/*.o include/*.h lib/*.a
 
-INC=-I include -I ${GSLPATH}/include -I ${CORAL_INCLUDE} -I ${HDF5_HOME}/include
+INC=-I include -I ${GSLPATH}/include -I ${CORAL_INCLUDE} -I ${BOOST_INCLUDE} -I ${HDF5_HOME}/include
 
 uninstall :
 	rm -f ${INSTALLDIR}/lib/madai/libb3d.a ${INSTALLDIR}/include/madai/b3d.h ${INSTALLDIR}/include/madai/sampler.h ${INSTALLDIR}/include/madai/resonances.h ${INSTALLDIR}/include/madai/inelastic.h ${INSTALLDIR}/include/madai/joshconvert.h ${INSTALLDIR}/include/madai/hydrotob3d.h
