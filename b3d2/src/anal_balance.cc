@@ -158,7 +158,7 @@ void CB3D::CalcBalance() {
     // B_ab(y) = (N_a(0) - N_-a(0))(N_b(y) - N_-b(y)) / (N_b(y) + N_-b(y))
     for (const auto& mypair : balance_pairs) {
         const auto& histogram = histograms.find(mypair)->second;
-        vector<double> B(nbins, 0);
+        vector<int64_t> B(nbins, 0);
         const int a = mypair.first;
         const int b = mypair.second;
         // We need to calculate N_a N_b - N_a N_-b - N_-a N_b + N_-a N_-b.
@@ -168,25 +168,26 @@ void CB3D::CalcBalance() {
             B[i] -= histograms.find(pairs[1])->second.histogram[i];
             B[i] -= histograms.find(pairs[2])->second.histogram[i];
             B[i] += histograms.find(pairs[3])->second.histogram[i];
-            B[i] /= total_number[abs(b)];
         }
         fprintf(anal_output, "B(%i, %i)\n", a, b);
         fprintf(anal_output, "y  B\n");
         for (size_t i = 0; i < B.size(); i++) {
             const double y = histogram.get_value(i);
             //^ Does not matter which histogram we use.
-            fprintf(anal_output, "%f  %f\n", y, B[i]);
+            fprintf(anal_output, "%f  %lli\n", y, B[i]);
         }
+        fprintf(anal_output, "total number of %i\n%lli\n", b, total_number[abs(b)]);
         fprintf(anal_output, "\n");
     }
 
-    vector<double> B_charge(nbins);
+    vector<int64_t> B_charge(nbins);
     fprintf(anal_output, "B(+, -)\n");
     for (size_t i = 0; i < B_charge.size(); i++) {
-        B_charge[i] = (double) charge_histogram.histogram[i] / total_number_all;
+        B_charge[i] = charge_histogram.histogram[i];
         const double pseudorapidity = charge_histogram.get_value(i);
-        fprintf(anal_output, "%f  %f\n", pseudorapidity, B_charge[i]);
+        fprintf(anal_output, "%f  %lli\n", pseudorapidity, B_charge[i]);
     }
+    fprintf(anal_output, "total number\n%lli\n", total_number_all);
     std::cout << "B(+, -): " << (double) charge_histogram.sum()/charge_histogram.nbins << " counts per bin." << std::endl;
 
     delete reslist;
