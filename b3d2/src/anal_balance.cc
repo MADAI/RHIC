@@ -116,18 +116,18 @@ void CB3D::CalcBalance() {
                 const auto mypair = make_pair(p_i.resinfo->code, p_j.resinfo->code);
                 const auto mypair_reversed = make_pair(mypair.second, mypair.first);
 
-                // For B(ab).
+                // For B(ab): Calculate N_a N_b.
                 auto search = histograms.find(mypair);
                 if (search != histograms.end()) {
                     const int charge = p_j.resinfo->charge;
                     const int weight = p_j.weight;
-                    search->second.add(dy, weight * charge);
+                    search->second.add(dy, weight * abs(charge));
                 }
                 search = histograms.find(mypair_reversed);
                 if (search != histograms.end()) {
                     const int charge = p_i.resinfo->charge;
                     const int weight = p_i.weight;
-                    search->second.add(dy, weight * charge);
+                    search->second.add(dy, weight * abs(charge));
                 }
 
                 // For B(+-).
