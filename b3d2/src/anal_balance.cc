@@ -35,7 +35,8 @@ void CB3D::CalcBalance() {
     //^ We need to set this, so the header gets read. Otherwise `feof(oscarfile) == true`.
 
     /// Balance functions to calculate.
-    vector<pair<int, int>> balance_pairs = { {211, -211}, {321, -321} };
+    // (pi+, pi-), (K+, K-), (p, pbar)
+    vector<pair<int, int>> balance_pairs = { {211, -211}, {321, -321}, {2212, -2212} };
     /// We need to calculate the histograms for (a,-b), (-a,b) and (-a,-b) too.
     const size_t old_size = balance_pairs.size();
     for (size_t i = 0; i < old_size; i++) {
