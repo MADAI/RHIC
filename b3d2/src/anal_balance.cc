@@ -14,7 +14,7 @@ int sign(double x) {
 
 /// Calculate the balance functions.
 void CB3D::CalcBalance() {
-    std::cout << "*** Calculating balance functions..." << std::endl;
+    std::cout << "*** Calculating balance functions for run " << run_name << "..." << std::endl;
     NSAMPLE = parameter::getI(parmap, "B3D_NSAMPLE", 1);
     const int neventsmax = parameter::getI(parmap, "B3D_NEVENTSMAX", 10);
 

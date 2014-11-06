@@ -3,6 +3,7 @@
 #include <cstring>
 #include <cstdlib>
 #include <cstdio>
+#include <functional>
 #include "b3d.h"
 #define __EVALUATE_SURFACE_VELOCITIES__
 
@@ -26,7 +27,7 @@ void CjoshConvert::Init(string run_name_set){
 	NRINGSMAX=parameter::getD(parmap,"B3D_NRINGSMAX",100);
 	NBOSE=parameter::getI(parmap,"B3D_NBOSE",1);
 	boseweight.resize(NBOSE);
-	randy=new CRandom(-1234);
+	randy=new CRandom(std::hash<string>()(run_name));
 	ring.resize(NRINGSMAX+1);
 	reslist->CalcEoS(Tf,epsilonf,Pf,nhadronsf,cs2,densityf);
 	reslist->CalcEoS(Tf,epsilonf,Pf,nhadronsf,densityf,boseweight);

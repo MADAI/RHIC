@@ -1,5 +1,6 @@
 #ifndef __B3D_CC__
 #define __B3D_CC__
+#include <functional>
 #include "b3d.h"
 
 CB3D::CB3D(){
@@ -74,7 +75,7 @@ CB3D::CB3D(string run_name_set){
 	FinalPartMap.clear();
 	ActionMap.clear();
 	DeadActionMap.clear();
-	randy=new CRandom(-1234);
+	randy=new CRandom(std::hash<string>()(run_name));
 	CAction::b3d=this;
 	oscarfile=NULL;
 	sampler=NULL;
