@@ -52,7 +52,8 @@ include/hydrotob3d.h\
 include/mutinfo.h\
 include/seinfo.h\
 include/regen.h\
-include/cell.h
+include/cell.h\
+include/accept.h
 
 B3D_OBJFILES = build/b3d.o\
 build/b3dsubs.o\
@@ -86,7 +87,8 @@ build/anal_v2.o\
 build/consolidate.o\
 build/anal_realitydiff.o\
 build/joshconvert.o\
-build/hydrotob3d.o
+build/hydrotob3d.o\
+build/accept.o
 
 #######################
 
@@ -133,6 +135,9 @@ include/cell.h : src/cell.h
 
 include/regen.h : src/regen.h
 	cp src/regen.h include/
+
+include/accept.h : src/accept.h
+	cp src/accept.h include/
 
 ######################
 
@@ -230,7 +235,7 @@ build/anal_v2.o : src/anal_v2.cc ${B3D_HFILES}
 build/anal_realitydiff.o : src/anal_realitydiff.cc ${B3D_HFILES}
 	${CPP} -c ${OPT} ${INC} ${MADAI_COMPILERDEFS} -o build/anal_realitydiff.o src/anal_realitydiff.cc
 		
-build/consolidate.o : src/consolidate.cc ${B3D_HFIES}
+build/consolidate.o : src/consolidate.cc ${B3D_HFILES}
 	${CPP} -c ${OPT} ${INC} ${MADAI_COMPILERDEFS} -o build/consolidate.o src/consolidate.cc
 		
 build/joshconvert.o : src/joshconvert.cc ${B3D_HFILES}
@@ -239,6 +244,8 @@ build/joshconvert.o : src/joshconvert.cc ${B3D_HFILES}
 build/hydrotob3d.o : src/hydrotob3d.cc ${B3D_HFILES}
 	${CPP} -c ${OPT} ${INC} ${MADAI_COMPILERDEFS} -o build/hydrotob3d.o src/hydrotob3d.cc
 	
+build/accept.o : src/accept.cc ${B3D_HFILES}
+	${CPP} -c ${OPT} ${INC} ${MADAI_COMPILERDEFS} -o build/accept.o src/accept.cc
 ############
 
 ${INSTALLDIR}/lib/madai/libb3d.a : lib/libb3d.a
@@ -276,6 +283,9 @@ ${INSTALLDIR}/include/madai/regen.h : include/regen.h
 	
 ${INSTALLDIR}/include/madai/cell.h : include/cell.h
 	cp -f include/cell.h ${INSTALLDIR}/include/madai/
+
+${INSTALLDIR}/include/madai/accept.h : include/accept.h
+	cp -f include/accept.h ${INSTALLDIR}/include/madai/
 
 ${INSTALLDIR}/progdata/madai/resinfo/resonances_pdg_new.dat : resinfo/resonances_pdg_new.dat
 	cp -f resinfo/resonances_pdg_new.dat ${INSTALLDIR}/progdata/madai/resinfo/
