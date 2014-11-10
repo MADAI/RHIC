@@ -175,6 +175,7 @@ public:
 	void CalcSpectra_PHENIXppbar();
 	double CalcSpectra_ALICE();
 	void Calc3DSpectra();
+    void CalcBalance();
 	void CalcV2_STAR();
 	void CalcV2_ALICE();
 	void CalcHBT_STAR();
