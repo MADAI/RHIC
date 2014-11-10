@@ -25,4 +25,4 @@ struct Acceptance {
 ///  7 => 60-70%
 ///  8 => 70-80%
 // TODO: figure out WTH dca is.
-Acceptance calc_acceptance_STAR(const CPart& part, int centrality, double* dca);
+Acceptance calc_acceptance_STAR(const CPart& part, int centrality, const double* dca);

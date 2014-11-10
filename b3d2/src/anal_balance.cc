@@ -5,6 +5,7 @@
 #include <boost/functional/hash.hpp> // needed for hashing pairs
 
 #include "b3d.h"
+#include "accept.h"
 #include "hist.h"
 #include "pow.h"
 
@@ -101,7 +102,13 @@ void CB3D::CalcBalance() {
                 // Skip particles we do not care about.
                 if (balance_species.count(abs(PID)) == 0 || y < min_y || y > max_y)
                     continue;
-                // TODO: p_T cuts and efficiency
+                // Apply STAR cuts and determine efficiency.
+                // (Assuming 0-5% centrality.)
+                const double dca[1] = { 1.0 }; // WTH?!
+                auto acceptance = calc_acceptance_STAR(*part, 0, &dca[0]);
+                if (!acceptance.accept)
+                    continue;
+                // TODO: efficiency
                 relevant_particles.push_back(*part);
                 total_number[abs(PID)] += weight * abs(charge);
                 total_number_all += weight * abs(charge);

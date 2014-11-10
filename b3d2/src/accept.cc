@@ -179,14 +179,14 @@ Acceptance star_acc_eff(int pid,double pt,double eta,double phi,int cen){
     return Acceptance(accept, eff);
 }
 
-Acceptance calc_acceptance_STAR(const CPart& part, int centrality, double* dca) {
+Acceptance calc_acceptance_STAR(const CPart& part, int centrality, const double* dca) {
     // Those are the cuts independent of the STAR acceptance.
     // They might be more restrictive.
     const double ETAMIN = -0.9;
     const double ETAMAX = 0.9;
     const double PTMIN = 200;
     const double PTMAX = 1600;
-    const int CENTRALITY = 4;
+    //const int CENTRALITY = 4;
 
     const int starpid = get_starpid(part.resinfo->code);
     if (starpid == -1)
@@ -200,7 +200,7 @@ Acceptance calc_acceptance_STAR(const CPart& part, int centrality, double* dca) 
         && dca[0] < 2.0
         && PTMIN < pt && pt < PTMAX) {
         const double phi = atan2(p[2], p[1]);
-        return star_acc_eff(starpid, 0.001*pt, eta, phi, CENTRALITY);
+        return star_acc_eff(starpid, 0.001*pt, eta, phi, centrality);
     }
 
     return Acceptance(false, 0);
